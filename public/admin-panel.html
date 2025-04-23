@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSS SocialSync Admin Panel</title>
+  <link rel="stylesheet" href="./css/admin-panel.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <header class="top-header">
+      <h1 class="brand-title">NSS SocialSync</h1>
+      <div class="user-profile">
+        <span class="user-name">Name</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/557ba8d707e2acc593313b6eb9bf8d5e560576ae?placeholderIfAbsent=true" class="user-avatar" alt="User profile">
+      </div>
+    </header>
+    <div class="main-container">
+      <nav class="sidebar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/b1374010b4473eac36a0d45b0d1473fd4f448970?placeholderIfAbsent=true" class="nav-icon" alt="Dashboard icon">
+            <span class="nav-text">Dashboard</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/2946857d7cd87724c558561ee00ff8cc516ab52b?placeholderIfAbsent=true" class="nav-icon" alt="Profile icon">
+            <span class="nav-text">Profile</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/b854a6676ccc76ba51c476e376cf6bacbb293200?placeholderIfAbsent=true" class="nav-icon" alt="Add Event icon">
+            <span class="nav-text">Add Event</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/9d62c035d760caffbfe5312a76824a61dd91ea94?placeholderIfAbsent=true" class="nav-icon" alt="Upcoming Events icon">
+            <span class="nav-text">Upcoming Events</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/5e0c2524d891376b745f177635e93b85c87802e6?placeholderIfAbsent=true" class="nav-icon" alt="Past Events icon">
+            <span class="nav-text">Past Events</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/64c49790b20fccef45134ca22c3ff033380ef1a5?placeholderIfAbsent=true" class="nav-icon" alt="Attendance Records icon">
+            <span class="nav-text">View Attendance Records</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/001e0f2ddf934350448d0753355dfb5613e1c019?placeholderIfAbsent=true" class="nav-icon" alt="Reports icon">
+            <span class="nav-text">Reports</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/1720bbf0b39a037b6b95866277160006e5b049ff?placeholderIfAbsent=true" class="nav-icon" alt="Mark Attendance icon">
+            <span class="nav-text">Mark Attendence</span>
+          </li>
+          <li class="nav-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/89bc17e1e739638429326746c9c6b5bbcfa84bc9?placeholderIfAbsent=true" class="nav-icon" alt="Logout icon">
+            <span class="nav-text">Logout</span>
+          </li>
+        </ul>
+      </nav>
+      <main class="content-area">
+        <div class="page-header">
+          <h2 class="page-title">DASHBOARD</h2>
+          <p class="breadcrumb">Home / <span class="current-page">Dashboard</span></p>
+        </div>
+        <section class="stats-container" data-el="div-2">
+          <div class="stats-row">
+            <article class="stat-card">
+              <h3 class="stat-title">Present</h3>
+              <div class="stat-content">
+                <div class="stat-icon"></div>
+                <div class="stat-details">
+                  <p class="stat-value">148</p>
+                  <p class="stat-change"><span class="highlight">12%</span> <span class="muted">increase</span></p>
+                </div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <h3 class="stat-title">Absent</h3>
+              <div class="stat-content">
+                <div class="stat-icon"></div>
+                <div class="stat-details">
+                  <p class="stat-value">2</p>
+                  <p class="stat-change"><span class="highlight">10%</span> <span class="muted">increase</span></p>
+                </div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <h3 class="stat-title">Total Working Days</h3>
+              <div class="stat-content">
+                <div class="stat-icon"></div>
+                <p class="stat-value total">200</p>
+              </div>
+            </article>
+            <article class="events-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/47c0f39dca798fadab37f08441e141d5fc9783f4?placeholderIfAbsent=true" class="events-icon" alt="Calendar icon">
+              <h3 class="events-title">Upcoming Events</h3>
+            </article>
+          </div>
+        </section>
+        <section class="reports-section">
+          <div class="reports-header">
+            <h3 class="reports-title">Reports <span class="reports-period">| Today</span></h3>
+            <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/20bb7a21866127e762ac4c895a14396b275c503d?placeholderIfAbsent=true" class="reports-chart" alt="Reports chart">
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="./js/admin-panel.js"></script>
+</body>
+</html>

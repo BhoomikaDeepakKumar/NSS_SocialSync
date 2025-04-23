@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  .header {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 65px;
+    text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 0;
+    background-color: #000;
+    text-align: center;
+  }
+  
+  .signup-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .signup-title {
+    font-family: "Julius Sans One",
+    -apple-system,
+    Helvetica,
+    sans-serif;
+    font-size: 80px;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+
+  .signup-form {
+    width: 701px;
+    border-radius: 20px;
+    border: 1px solid #2f897d;
+    box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-family: "Jura", sans-serif;
+    font-size: 30px;
+    color: #2f4a55;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .form-input {
+    border-radius: 10px;
+    width: 100%;
+    height: 59px;
+    margin-bottom: 16px;
+    border: 1px solid #2f897d;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+
+  
+  .signup-button {
+    width: 182px;
+    height: 55px;
+    border: 1px solid #fdd05b;
+    border-radius: 5px;
+    color: #17272f;
+    font-family: "Jura", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #15c6ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-text {
+    font-family: "Jura", sans-serif;
+    font-size: 25px;
+    color: #2f4a55;
+    margin-top: 20px;
+  }
+  
+  .login-link {
+    color: #2f897d;
+    cursor: pointer;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 991px) {
+    .container {
+      max-width: 991px;
+    }
+  
+    .header {
+      font-size: 50px;
+    }
+  
+    .signup-title {
+      font-size: 60px;
+    }
+  
+    .signup-form {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  
+    .header {
+      font-size: 35px;
+    }
+  
+    .signup-title {
+      font-size: 40px;
+    }
+  
+    .signup-form {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .form-label {
+      font-size: 20px;
+    }
+  
+    .form-input {
+      height: 35px;
+    }
+  
+    .signup-button {
+      width: 150px;
+      height: 45px;
+      font-size: 20px;
+    }
+  
+    .login-text {
+      font-size: 20px;
+    }
+  }
+  
