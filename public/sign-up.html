@@ -11,27 +11,27 @@
     />
   </head>
   <body>
-    <main class="container">
-      <header class="header">NSS SocialSync</header>
+    <main class="signup-page">
+      <header class="header">
+        <img src="../logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+      </header> 
+      
+      <h1 class="signup-title">SIGN UP</h1>
       <section class="signup-section">
-        <h1 class="signup-title">SIGN UP</h1>
         <form class="signup-form">
-          <div class="form-group">
+          
             <label class="form-label" for="name">Name</label>
             <input type="text" class="form-input" id="name" />
-          </div>
-          <div class="form-group">
             <label class="form-label" for="email-id">Email ID</label>
             <input type="email" class="form-input" id="email-id" />
-          </div>
-          <div class="form-group">
             <label class="form-label" for="password">Password</label>
             <input type="password" class="form-input" id="password" />
-          </div>
           <button type="submit" class="signup-button">Sign Up</button>
+          <div class="existing-user-container">
           <p class="login-text">
             Existing User? <span class="login-link">Login here</span>
           </p>
+        </div>
         </form>
       </section>
     </main>

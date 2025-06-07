@@ -5,12 +5,14 @@
   }
   
   body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", -apple-system, Helvetica, sans-serif;
     background-color: #fff;
+    font-weight: 400;
   }
   
-  .container {
+  .signup-page {
     max-width: none;
+    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -18,113 +20,144 @@
     align-items: center;
     width: 100%;
     background-color: #fff;
+    font-weight: 400;
   }
   
   .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 1);
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 65px;
     text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 10px 0;
-    background-color: #000;
+    padding: 10px 20px;
     text-align: center;
   }
   
-  .signup-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+  .logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
   }
+
+
   
   .signup-title {
     font-family: "Julius Sans One",
     -apple-system,
     Helvetica,
     sans-serif;
-    font-size: 80px;
-    color: #000;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 1);
+    
+    margin-top: 40px;
     font-weight: 400;
+    text-align: center;
+  }
+
+  .signup-section {
+    display: flex;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(47, 137, 125, 1);
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px; /* smaller width */
+  padding: 40px 20px; /* less padding */
+  flex-direction: column;
+  align-items: stretch;
+  font-family: "Jura", -apple-system, Helvetica, sans-serif;
+  font-weight: 700;
   }
 
 
   .signup-form {
-    width: 701px;
-    border-radius: 20px;
-    border: 1px solid #2f897d;
-    box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
-    padding: 20px;
+    width: 100%;
+    padding: 0 31px 0 31px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #fff;
+    align-items: stretch;
+    font-size: 1.2rem;
+    color: rgba(47,74,85,1);
   }
 
   
-  .form-group {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
   .form-label {
-    font-family: "Jura", sans-serif;
-    font-size: 30px;
-    color: #2f4a55;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
+    align-self: flex-start;
+    margin-bottom: 16px;
   }
   
   .form-input {
     border-radius: 10px;
+    background-color: rgba(255,255,255,1);
     width: 100%;
-    height: 59px;
-    margin-bottom: 16px;
-    border: 1px solid #2f897d;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(47, 137, 125, 1);
     border-radius: 10px;
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: "Jura", -apple-system, Helvetica, sans-serif;
   }
 
 
   
   .signup-button {
-    width: 182px;
-    height: 55px;
+    width: 130px;
+    height: 40px;
+    padding: 14px 18px;
     border: 1px solid #fdd05b;
     border-radius: 5px;
-    color: #17272f;
+    color: rgba(23,39,47,1);
+    text-align: center
+    border: none;
     font-family: "Jura", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
     margin-top: 20px;
     cursor: pointer;
-    background-color: #15c6ea;
+    background-color: rgba(21,198,234,1);
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
   }
   
+  .signup-button:hover {
+    opacity: 0.8;
+  }
+  .existing-user-container {
+    width: 100%;            /* Full width to align with inputs */
+    
+    margin-top: 20px;       /* Space above */
+    box-sizing: border-box; /* Ensure padding works nicely */
+  }
   .login-text {
     font-family: "Jura", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #2f4a55;
-    margin-top: 20px;
+    margin: 0;              /* Reset margins inside container */
+    line-height: 1.5;
   }
   
   .login-link {
     color: #2f897d;
     cursor: pointer;
+    margin-left: 5px;
+  }
+
+  .login-link:hover {
+    text-decoration: underline;
   }
   
   /* Media Queries */
   @media (max-width: 991px) {
-    .container {
-      max-width: 991px;
-    }
+   
   
     .header {
       font-size: 50px;
@@ -140,9 +173,7 @@
   }
   
   @media (max-width: 640px) {
-    .container {
-      max-width: 640px;
-    }
+     
   
     .header {
       font-size: 35px;

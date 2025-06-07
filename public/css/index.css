@@ -16,39 +16,39 @@ body {
 
 /* Login page container */
 .login-page {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fff;
+  min-height: 100vh; /* take full height of viewport */
   display: flex;
-  padding-bottom: 97px;
   flex-direction: column;
-  overflow: hidden;
   align-items: center;
   font-weight: 400;
-  width: 100%;
 }
+
 
 /* Header with app name */
 .header {
-  text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   background-color: rgba(0, 0, 0, 1);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  align-self: stretch;
   width: 100%;
-  padding: 11px 70px;
-  font-family:
-    "Roboto",
-    -apple-system,
-    Helvetica,
-    sans-serif;
-  font-size: 65px;
-  color: rgba(255, 255, 255, 1);
-  text-align: center;
+  padding: 10px 20px;
 }
+.logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
 
 /* Login title */
 .login-title {
   margin-top: 40px;
   color: rgba(0, 0, 0, 1);
-  font-size: 80px;
+  font-size: 3rem;
   font-family:
     "Julius Sans One",
     -apple-system,
@@ -61,23 +61,20 @@ body {
 /* Main login container */
 .login-container {
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fff;
   box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(47, 137, 125, 1);
   display: flex;
-  margin-top: 27px;
-  width: 701px;
-  max-width: 100%;
-  padding: 117px 0;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px; /* smaller width */
+  padding: 40px 20px; /* less padding */
   flex-direction: column;
   align-items: stretch;
-  font-family:
-    "Jura",
-    -apple-system,
-    Helvetica,
-    sans-serif;
+  font-family: "Jura", -apple-system, Helvetica, sans-serif;
   font-weight: 700;
 }
+
 
 /* Form container */
 .login-form {
@@ -86,24 +83,28 @@ body {
   padding: 0 31px 0 31px;
   flex-direction: column;
   align-items: stretch;
-  font-size: 30px;
+  font-size: 1.2rem;
   color: rgba(47, 74, 85, 1);
+  font-weight: 700;
 }
 
 /* Form labels */
 .form-label {
   align-self: flex-start;
   margin-bottom: 16px;
+  
 }
 
 /* Form inputs */
 .form-input {
   border-radius: 10px;
+  color: rgba(47, 74, 85, 1);
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(47, 137, 125, 1);
-  height: 59px;
-  margin-bottom: 36px;
+  height: 40px;
+  margin-bottom: 30px;
   padding: 0 10px;
+  font-weight: 700;
   font-family:
     "Jura",
     -apple-system,
@@ -112,13 +113,14 @@ body {
   font-size: 18px;
 }
 
+
 /* Remember me container */
 .remember-container {
   align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 /* Remember checkbox */
@@ -151,15 +153,18 @@ body {
 
 /* Sign in button */
 .sign-in-button {
+  display: flex; /* Add this */
+  justify-content: center; /* Horizontally center */
+  align-items: center;     /* Vertically center */
   border: 1px solid #fdd05b;
   border-radius: 5px;
   background-color: rgba(21, 198, 234, 1);
   align-self: center;
   margin-top: 20px;
-  width: 182px;
-  height: 55px;
+  width: 130px;
+  height: 40px;
   padding: 14px 18px;
-  font-size: 25px;
+  font-size: 20px;
   color: rgba(23, 39, 47, 1);
   text-align: center;
   border: none;
@@ -174,18 +179,19 @@ body {
 
 
 .sign-in-button:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /* Links container */
 .login-links {
   align-self: flex-start;
   display: flex;
-  margin: 45px 0 -28px 40px;
+  margin: 20px 0 0 0;
   flex-direction: column;
   align-items: stretch;
-  font-size: 25px;
+  font-size: 20px;
   color: rgba(47, 137, 125, 1);
+  padding-left: 31px;
 }
 
 /* Forgot password link */
@@ -201,7 +207,7 @@ body {
 
 /* Register prompt */
 .register-prompt {
-  margin-top: 33px;
+  margin-top: 10px;
 }
 
 /* Register text */
@@ -233,7 +239,7 @@ body {
   }
 
   .login-container {
-    padding-bottom: 100px;
+    padding-bottom: 30px;
   }
 
   .login-form {
