@@ -1,0 +1,10 @@
+com\example\demo\Controller\RegistrationController.class
+com\example\demo\Controller\VerificationController.class
+com\example\demo\Controller\ContentController.class
+com\example\demo\Security\SecurityConfig.class
+com\example\demo\Model\MyAppUserRepository.class
+com\example\demo\service\EmailService.class
+com\example\demo\DemoApplication.class
+com\example\demo\utils\JwtTokenUtil.class
+com\example\demo\Model\MyAppUser.class
+com\example\demo\Model\MyAppUserService.class
