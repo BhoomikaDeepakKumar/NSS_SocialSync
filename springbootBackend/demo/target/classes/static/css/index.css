@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -18,513 +25,180 @@ html, body {
 }
 
 
-
-.admin-panel {
-  background-color: rgba(255, 255, 255, 1);
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-.admin-panel-page {
-  background-color: #fff;
-  min-height: 100vh; /* take full height of viewport */
-  display: flex;
-  flex-direction: column;
- 
-  font-weight: 400;
+#calendar-wrapper {
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 
-
-
-/* Header with app name */
-.header {
-position: fixed;
-  top: 0;
-   left: 0;
-  right: 0;
-  z-index: 1000; /* stay above content */
-  align-items: stretch;
-  justify-content: space-between;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 14px 65px 7px 22px;
-gap: 20px;
-color: rgba(255, 255, 255, 1);
-  font-weight: 400;
-  flex-wrap: wrap;
-
-  display: flex;
-  /* align-items: center;
-  justify-content: flex-start; */
-  background-color: rgba(0, 0, 0, 1);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  padding: 10px 20px;
-   height: 80px;
-}
-
-
-.logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 
 
-@media (max-width: 991px) {
-  .header {
-      max-width: 100%;
-      padding: 14px 20px 7px 20px;
-  }
+/* Remove outer calendar border */
+.fc-scrollgrid,
+.fc-scrollgrid table {
+  border: none !important;
+  box-shadow: none !important;
 }
 
-
-
-@media (max-width: 991px) {
-  .brand-title {
-      max-width: 100%;
-      font-size: 40px;
-  }
+.fc-daygrid-day {
+   border: none
 }
 
-.user-profile {
-  display: flex;
-  margin: auto 0;
-  align-items: stretch;
-  gap: 47px;
-  font-family: Gowun Dodum, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 30px;
-  white-space: nowrap;
-}
-
-@media (max-width: 991px) {
-  .user-profile {
-      white-space: initial;
-  }
-}
-
-.user-name {
-  margin: auto 0;
-}
-
-.user-avatar {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 56px;
-  flex-shrink: 0;
-}
-
-/* .main-container {
-  z-index: 10;
-  width: 100%;
-  max-width: 1386px;
-  margin: 0 auto;
-} */
-
-.main-container {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-@media (max-width: 991px) {
-  .main-container {
-      max-width: 100%;
-  }
-}
-
-.main-container > div {
-  gap: 20px;
-  display: flex;
-}
-
-@media (max-width: 991px) {
-  .main-container > div {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0px;
-  }
-}
-
-
-.sidebar {
-  position: fixed;
-   top: 80px;
-  height: calc(100vh - 80px); /* full height minus header */
-  overflow: hidden; /* prevent internal scrollbar */
-  
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  line-height: normal;
-
-  width: 24%;
-  margin-left: 0;
-  
-  border-right: 1px solid #ccc;
-  background-color: rgba(47, 137, 125, 0.77); /* maintain your color */
-  
-}
-
-
-@media (max-width: 991px) {
-  .sidebar {
-      width: 100%;
-  }
-}
-
-.navigation {
-  background-color: rgba(47, 137, 125, 0.77);
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-  padding: 41px 12px 1647px 25px;
-  flex-direction: column;
-  align-items: start;
-  font-family: Gowun Dodum, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 400;
-}
-
-@media (max-width: 991px) {
-  .navigation {
-      margin-top: 40px;
-      padding: 41px 20px 100px 20px;
-  }
-}
-
-.nav-item {
-  display: flex;
-  align-items: stretch;
-  gap: 35px;
-  color: rgba(23, 39, 47, 1);
-  white-space: nowrap;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.nav-item:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.nav-item.active {
-  color: rgba(23, 39, 47, 1);
-}
-
-@media (max-width: 991px) {
-  .nav-item {
-      white-space: initial;
-  }
-}
-
-.nav-icon {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 30px;
-  flex-shrink: 0;
-}
-
-.nav-text {
-  margin: auto 0;
-}
-
-.logout-button {
-  margin-top: 34px;
-  margin-left: 64px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.logout-button:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-@media (max-width: 991px) {
-  .logout-button {
-      margin-left: 10px;
-  }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  line-height: normal;
-  width: 76%;
-  margin-left: 20px;
-}
-
-@media (max-width: 991px) {
-  .content {
-      width: 100%;
-  }
-}
-
-.breadcrumb-section {
-  display: flex;
-  margin-top: 43px;
-  width: 100%;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-@media (max-width: 991px) {
-  .breadcrumb-section {
-      max-width: 100%;
-      margin-top: 40px;
-  }
-}
-
-.breadcrumb-section > div {
-  align-self: start;
-  margin-left: 10px;
-  font-weight: 400;
-}
-
-.page-title {
-  color: rgba(23, 39, 47, 1);
-  font-size: 30px;
-  font-family: Hannari, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.breadcrumb {
-  color: rgba(47, 137, 125, 1);
-  font-size: 20px;
-  font-family: Gowun Dodum, -apple-system, Roboto, Helvetica, sans-serif;
-  margin-top: 13px;
-}
-
-.current-page {
-  color: rgba(23, 39, 47, 1);
-}
-
-@media (max-width: 991px) {
-  .breadcrumb {
-      margin-right: 10px;
-  }
-}
-
-.section-title {
-  border-radius: 10px;
-  background-color: rgba(253, 208, 91, 0.34);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  align-self: center;
-  margin-top: 80px;
-  width: 343px;
-  max-width: 100%;
-  padding: 3px 40px;
-  font-family: Hannari, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 30px;
-  color: rgba(23, 39, 47, 1);
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-@media (max-width: 991px) {
-  .section-title {
-      padding: 3px 20px;
-      margin-top: 40px;
-  }
-}
-
-.calendar-widget {
-  border-radius: 32px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 21px 32px 53px rgba(0, 0, 0, 0.05);
-  align-self: center;
-  display: flex;
-  margin-top: 41px;
-  margin-left: 13px;
-  width: 677px;
-  max-width: 100%;
-  padding: 42px;
-  flex-direction: column;
-  align-items: stretch;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 25px;
-  color: rgba(51, 51, 51, 1);
-  font-weight: 400;
-  white-space: nowrap;
-  text-align: center;
-  justify-content: center;
-}
-
-@media (max-width: 991px) {
-  .calendar-widget {
-      padding: 20px;
-      margin-top: 40px;
-      white-space: initial;
-  }
-}
-
-.calendar-grid {
-  border-radius: 0px 0px 0px 0px;
-  width: 100%;
-  max-width: 592px;
-}
-
-@media (max-width: 991px) {
-  .calendar-grid {
-      max-width: 100%;
-      white-space: initial;
-  }
-}
-
-.calendar-header {
-  display: flex;
-  align-items: stretch;
-  color: rgba(211, 211, 211, 1);
-  flex-wrap: wrap;
-}
-
-@media (max-width: 991px) {
-  .calendar-header {
-      max-width: 100%;
-      white-space: initial;
-  }
-}
-
-.day-header {
-  min-height: 85px;
-  padding: 24px 15px;
-  flex: 1;
-}
-
-@media (max-width: 991px) {
-  .day-header {
-      white-space: initial;
-  }
-}
-
-.calendar-row {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 991px) {
-  .calendar-row {
-      max-width: 100%;
-      white-space: initial;
-  }
-}
-
-.calendar-day {
-  min-height: 85px;
-  padding: 24px 21px;
-  flex: 1;
+.fc-daygrid-day-frame {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  flex-direction: column;
 }
 
-.calendar-day:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+.fc-toolbar-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.calendar-day.prev-month,
-.calendar-day.next-month {
-  color: rgba(211, 211, 211, 1);
+
+
+#eventCalendar {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
-.calendar-day.event-completed {
-  border-radius: 21px;
-  border: 2px solid rgba(139, 195, 74, 1);
-  color: rgba(139, 195, 74, 1);
+  /* Calendar text improvements */
+.fc {
+    font-size: 14px;
+    color: #333;
 }
 
-.calendar-day.event-ongoing {
-  border-radius: 21px;
-  background-color: rgba(255, 111, 0, 1);
-  color: rgba(255, 255, 255, 1);
-  width: 85px;
-  height: 85px;
+.fc-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+.fc-button:hover {
+    background-color: #0056b3;
 }
 
-.calendar-day.event-upcoming {
-  border-radius: 21px;
-  border: 2px solid rgba(0, 176, 255, 1);
-  color: rgba(0, 176, 255, 1);
+.fc-daygrid-event {
+    background-color: #ffc107;
+    border: none;
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.85rem;
 }
 
-@media (max-width: 991px) {
-  .calendar-day {
-      padding: 20px;
-      white-space: initial;
-  }
+
+/* Remove underline and set background for weekday headers */
+.fc .fc-col-header-cell-cushion {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: #333;
+  font-weight: 600;
 }
 
-.calendar-legend {
-  align-self: center;
-  display: flex;
-  margin-top: 74px;
-  margin-left: 33px;
-  width: 665px;
-  max-width: 100%;
-  align-items: stretch;
-  gap: 20px;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 1);
-  font-weight: 400;
+/* Hide calendar grid lines */
+.fc-theme-standard td, 
+.fc-theme-standard th {
+  border: none !important;
+}
+
+
+/* Optional: set background color for the day name row */
+.fc-col-header {
+  background-color: white !important;
+  border-bottom: 1px solid #ddd;
+}
+/* Style the date numbers inside calendar cells */
+.fc-daygrid-day-number {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 4px;
+
+  display: block;
+   width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/* Optional: hover effect for better interactivity */
+.fc-daygrid-day-number:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Compact event block style */
+.fc-event {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
   white-space: nowrap;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin-bottom: 2px;
+  width: auto;
+  max-width: 100%;
 }
 
-@media (max-width: 991px) {
-  .calendar-legend {
-      margin-top: 40px;
-      white-space: initial;
-  }
+/* Prevent events from stacking block-style */
+.fc-daygrid-event {
+  display: inline-block;
 }
 
-.legend-item {
-  align-self: start;
-  display: flex;
-  align-items: stretch;
-  gap: 17px;
+/* Optional: custom styles for each event status */
+.fc-event.event-ongoing {
+  background-color: #FF6F00 !important;
+  border: none;
+  color: black;
 }
 
-@media (max-width: 991px) {
-  .legend-item {
-      white-space: initial;
-  }
+.fc-event.event-upcoming {
+  background-color: #00B0FF !important;
+  border: none;
+  color: white;
 }
 
-.legend-dot {
-  border-radius: 50%;
-  align-self: start;
-  display: flex;
-  width: 16px;
-  flex-shrink: 0;
-  height: 16px;
+.fc-event.event-completed {
+  background-color: #6c757d !important;
+  border: none;
+  color: white;
 }
 
-.legend-dot.completed {
+
+
+/* .legend-dot.completed {
   background-color: rgba(139, 195, 74, 0.93);
 }
-
 .legend-dot.ongoing {
   background-color: rgba(255, 111, 0, 1);
 }
-
 .legend-dot.upcoming {
   background-color: rgba(0, 176, 255, 1);
-}
+} */
 
-.legend-text {
-  flex-basis: auto;
-}
 
 .stats-section {
   margin-top: 55px;
@@ -539,8 +213,10 @@ color: rgba(255, 255, 255, 1);
 }
 
 .stats-grid {
-  gap: 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 @media (max-width: 991px) {
@@ -552,17 +228,24 @@ color: rgba(255, 255, 255, 1);
 }
 
 .stat-card {
-  display: flex;
-  flex-direction: column;
   align-items: stretch;
   line-height: normal;
   width: 25%;
   margin-left: 0px;
+
+   flex: 1 1 calc(25% - 15px); /* 4 cards in a row with spacing */
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card > div {
+  height: 100%;
 }
 
 @media (max-width: 991px) {
   .stat-card {
       width: 100%;
+       flex: 1 1 100%;
   }
 }
 
@@ -675,12 +358,6 @@ color: rgba(255, 255, 255, 1);
   font-weight: 700;
 }
 
-@media (max-width: 991px) {
-  .stat-number-large {
-      white-space: initial;
-  }
-}
-
 .stat-change {
   color: rgba(25, 135, 84, 1);
   font-size: 14px;
@@ -701,16 +378,17 @@ color: rgba(255, 255, 255, 1);
   background-color: rgba(39, 205, 165, 0.36);
   display: flex;
   flex-grow: 1;
-  padding: 59px 14px;
-  align-items: stretch;
-  gap: 20px;
+  padding: 20px 24px;
+  align-items: center;
+   justify-content: center;;
+
+  gap: 12px;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 18px;
   color: rgba(39, 205, 165, 1);
   font-weight: 500;
   line-height: 22px;
   width: 100%;
-  justify-content: space-between;
 }
 
 @media (max-width: 991px) {
@@ -719,11 +397,13 @@ color: rgba(255, 255, 255, 1);
   }
 }
 
+
 .upcoming-events-icon {
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
-  width: 27px;
+  width: 28px;
+  height: 28px;
   margin: auto 0;
   flex-shrink: 0;
 }
@@ -800,258 +480,14 @@ color: rgba(255, 255, 255, 1);
   }
 }
 
-.reports-chart {
-  aspect-ratio: 2.37;
-  object-fit: contain;
-  object-position: center;
-  width: 919px;
-  margin-top: 8px;
-  max-width: 100%;
+
+#attendanceChart {
+  height: 250px !important; /* or any height you prefer */
 }
 
-.news-feed-section {
-  align-self: start;
-  display: flex;
-  margin-top: 15px;
-  min-height: 56px;
-  align-items: center;
-  gap: 24px;
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 500;
-  justify-content: end;
-  position: relative;
-}
-
-@media (max-width: 991px) {
-  .news-feed-section {
-      margin-left: 3px;
-  }
-}
-
-.news-feed-button {
-  align-self: stretch;
-  border-radius: 8px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  background-color: #000;
-  margin: auto 0;
-  min-height: 56px;
-  padding: 10px 32px;
-  gap: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 991px) {
-  .news-feed-button {
-      padding: 10px 20px;
-  }
-}
-
-.star-icon {
-  align-self: stretch;
-  width: 24px;
-  z-index: 10;
-  margin-top: 82px;
-  margin-left: 25px;
-  margin-right: 23px;
-  gap: 8px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 1);
-  font-weight: 400;
-  white-space: nowrap;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-@media (max-width: 991px) {
-  .star-icon {
-      margin-right: 10px;
-      margin-top: 40px;
-      white-space: initial;
-  }
-}
-
-.news-feed-list {
-  border-radius: 15px;
-  background-color: rgba(128, 226, 233, 1);
-  border: 1px solid rgba(0, 0, 0, 1);
-  display: flex;
-  margin-top: -91px;
-  width: 100%;
-  padding: 11px 10px;
-  flex-direction: column;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 991px) {
-  .news-feed-list {
-      max-width: 100%;
-  }
-}
-
-.news-item {
-  border-radius: 5px;
-  background-color: rgba(128, 226, 233, 1);
-  display: flex;
-  max-width: 100%;
-  width: 991px;
-  align-items: start;
-  gap: 8px;
-  justify-content: start;
-  margin-bottom: 8px;
-}
-
-.news-item:last-child {
-  margin-bottom: 0;
-}
-
-.news-card {
-  border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.05);
-  display: flex;
-  min-width: 240px;
-  width: 100%;
-  padding: 12px;
-  flex-direction: column;
-  overflow: hidden;
-  align-items: stretch;
-  justify-content: center;
-  flex: 1;
-}
-
-@media (max-width: 991px) {
-  .news-card {
-      max-width: 100%;
-  }
-}
-
-.news-user {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 4px;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 500;
-  line-height: 1;
-  justify-content: start;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 991px) {
-  .news-user {
-      max-width: 100%;
-  }
-}
-
-.news-avatar-section {
-  align-self: stretch;
-  display: flex;
-  min-width: 240px;
-  margin: auto 0;
-  align-items: center;
-  gap: 8px;
-  justify-content: start;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-@media (max-width: 991px) {
-  .news-avatar-section {
-      max-width: 100%;
-  }
-}
-
-.news-avatar {
-  border-radius: 24px;
-  background-color: rgba(0, 0, 0, 0.1);
-  align-self: stretch;
-  display: flex;
-  margin: auto 0;
-  width: 24px;
-  flex-shrink: 0;
-  height: 24px;
-}
-
-.news-title {
-  align-self: stretch;
-  min-width: 240px;
-  margin: auto 0;
-  flex: 1;
-}
-
-@media (max-width: 991px) {
-  .news-title {
-      max-width: 100%;
-  }
-}
-
-.news-spacer {
-  align-self: stretch;
-  display: flex;
-  margin: auto 0;
-  width: 58px;
-  flex-shrink: 0;
-  height: 10px;
-}
-
-.news-description {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1;
-  margin-top: 8px;
-}
-
-@media (max-width: 991px) {
-  .news-description {
-      max-width: 100%;
-  }
-}
-
-.news-action {
-  transform: rotate(3.141592653589793rad);
-  align-self: center;
-  display: flex;
-  min-height: 24px;
-  margin-top: 8px;
-  width: 24px;
-  gap: 8px;
-}
-
-.news-star {
-  align-self: stretch;
-  width: 100%;
-  margin-top: 8px;
-  gap: 8px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 1);
-  white-space: nowrap;
-  text-align: center;
-}
-
-@media (max-width: 991px) {
-  .news-star {
-      max-width: 100%;
-      white-space: initial;
-  }
-}
-
-/* Reset default margins and paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
+#attendanceChart {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
 }

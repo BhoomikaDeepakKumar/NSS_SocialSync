@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSS SocialSync - index</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Gowun+Dodum:wght@400&family=Hannari:wght@400&family=Poppins:wght@400;500;700&family=Nunito:wght@400;700&family=Open+Sans:wght@400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+<!-- FullCalendar JS (for global usage) -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script> -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FullCalendar with Bootstrap 5 support -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="admin-panel-page">
+    <div class="admin-panel">
+        <header class="header">
+        <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+            <div class="user-profile">
+                <span class="user-name">Name</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/375f2111a45371fe9170e5578e2f5f9b987f63dd?placeholderIfAbsent=true" alt="User Avatar" class="user-avatar">
+            </div>
+        </header>
+
+        <div class="main-container">
+            <aside class="sidebar">
+                <nav class="navigation">
+                    <a href="/index" class="nav-item ">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/b1374010b4473eac36a0d45b0d1473fd4f448970?placeholderIfAbsent=true" alt="Dashboard" class="nav-icon">
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a href="/profile" class="nav-item active">
+                   <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/2946857d7cd87724c558561ee00ff8cc516ab52b?placeholderIfAbsent=true" alt="Profile" class="nav-icon">
+                   <span class="nav-text">Profile</span>
+                    </a>
+                    <a href="/add-event" class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/b854a6676ccc76ba51c476e376cf6bacbb293200?placeholderIfAbsent=true" alt="Add Event" class="nav-icon">
+                        <span class="nav-text">Add Event</span>
+                    </a>
+                    <a href="/upcoming-events" class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/9d62c035d760caffbfe5312a76824a61dd91ea94?placeholderIfAbsent=true" alt="Upcoming Events" class="nav-icon">
+                        <span class="nav-text">Upcoming Events</span>
+                    </a>
+                    <a href="/past-events" class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/5e0c2524d891376b745f177635e93b85c87802e6?placeholderIfAbsent=true" alt="Past Events" class="nav-icon">
+                        <span class="nav-text">Past Events</span>
+                    </a>
+                    <a href="/attendance-records" class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/64c49790b20fccef45134ca22c3ff033380ef1a5?placeholderIfAbsent=true" alt="View Attendance Records" class="nav-icon">
+                        <span class="nav-text">View Attendance Records</span>
+                    </a>
+                    <a href="/reports" class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/001e0f2ddf934350448d0753355dfb5613e1c019?placeholderIfAbsent=true" alt="Reports" class="nav-icon">
+                        <span class="nav-text">Reports</span>
+                    </a>
+                    <div class="nav-item">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/10e29c5b761f1d9bc5a7aea7524ce4ca40605b2f?placeholderIfAbsent=true" alt="Mark Attendance" class="nav-icon">
+                        <span class="nav-text">Mark Attendence</span>
+                    </div>
+
+                     <div class="nav-item logout-button">
+                     <a href="/req/login" title="Logout" style="display: flex; align-items: center; gap: 35px; text-decoration: none; color: inherit;">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/840b79c80a414db1a65c384b8b9735f2/3d5b71d7b0c2df7a39f81563aad73fdcdd8cf015?placeholderIfAbsent=true" alt="Logout Icon" class="nav-icon">
+                    <span class="nav-text">Logout</span>
+                    </a>
+                    </div>
+                     
+
+                </nav>
+            </aside>
+
+            <main class="content">
+                <div class="breadcrumb-section">
+                    <h2 class="page-title">PROFILE</h2>
+                    <div class="breadcrumb">
+                        Home / <span class="current-page">Profile</span>
+                    </div>
+                </div>
+  
+            </main>
+        </div>
+    </div>
+</main>
+    <script src="/js/profile.js"></script>
+    <script src="/js/main.js"></script>
+
+       
+</body>
+</html>

@@ -1,23 +1,64 @@
-package com.example.demo.Controller;
+    package com.example.demo.Controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class ContentController {
-    
-    @GetMapping("/req/login")
-    public String login(){
-        return "login";
+    @Controller
+    public class ContentController {
+        
+        @GetMapping("/req/login")
+        public String login(){
+            return "login";
+        }
+
+
+        
+        @GetMapping("/req/signup")
+        public String signup(){
+            return "signup";
+        }
+        @GetMapping("/index")
+        public String home(){
+            return "index";
+        }
+
+        @GetMapping("/main")
+        public String main(){
+            return "main";
+        }
+        
+        @GetMapping("/profile")
+        public String Profile() {
+            return "profile";
+        }
+
+        @GetMapping("/add-event")
+        public String addEvent() {
+            return "add-event";
+        }
+
+        @GetMapping("/upcoming-events")
+        public String upcomingEvents() {
+            return "upcoming-events";
+        }
+
+        @GetMapping("/past-events")
+        public String pastEvents() {
+            return "past-events";
+        }
+
+        @GetMapping("/attendance-records")
+        public String attendanceRecords() {
+            return "attendance-records";
+        }
+
+        @GetMapping("/reports")
+        public String reports() {
+            return "reports";
+        }
+
+        @GetMapping("/mark-attendance")
+        public String markAttendance() {
+            return "mark-attendance";
+        }
     }
-    
-    @GetMapping("/req/signup")
-    public String signup(){
-        return "signup";
-    }
-    @GetMapping("/index")
-    public String home(){
-        return "index";
-    }
-    
-}

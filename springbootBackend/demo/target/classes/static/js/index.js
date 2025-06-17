@@ -182,30 +182,7 @@
       }, 300);
   }
 
-  function initializeNewsFeeds() {
-      const newsItems = document.querySelectorAll('.news-item');
-
-      newsItems.forEach((item, index) => {
-          // Add fade-in animation
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(20px)';
-
-          setTimeout(() => {
-              item.style.transition = 'all 0.5s ease';
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-          }, index * 200);
-
-          // Add click interaction
-          item.addEventListener('click', function() {
-              this.style.backgroundColor = 'rgba(47, 137, 125, 0.2)';
-
-              setTimeout(() => {
-                  this.style.backgroundColor = '';
-              }, 200);
-          });
-      });
-  }
+  
 
   function initializeResponsiveMenu() {
       // Add mobile menu toggle functionality
@@ -253,50 +230,11 @@
       checkMobile();
   }
 
-  function initializeTooltips() {
-      const navItems = document.querySelectorAll('.nav-item');
-
-      navItems.forEach(item => {
-          const tooltip = document.createElement('div');
-          tooltip.className = 'tooltip';
-          tooltip.textContent = item.querySelector('.nav-text').textContent;
-          tooltip.style.cssText = `
-              position: absolute;
-              background: rgba(0, 0, 0, 0.8);
-              color: white;
-              padding: 5px 10px;
-              border-radius: 4px;
-              font-size: 12px;
-              white-space: nowrap;
-              opacity: 0;
-              pointer-events: none;
-              transition: opacity 0.3s ease;
-              z-index: 1000;
-          `;
-
-          item.style.position = 'relative';
-          item.appendChild(tooltip);
-
-          item.addEventListener('mouseenter', function() {
-              tooltip.style.opacity = '1';
-              tooltip.style.left = '100%';
-              tooltip.style.top = '50%';
-              tooltip.style.transform = 'translateY(-50%)';
-              tooltip.style.marginLeft = '10px';
-          });
-
-          item.addEventListener('mouseleave', function() {
-              tooltip.style.opacity = '0';
-          });
-      });
-  }
 
   // Initialize all functionality
   function initialize() {
       update();
-      initializeNewsFeeds();
       initializeResponsiveMenu();
-      initializeTooltips();
 
       // Add smooth scrolling
       document.documentElement.style.scrollBehavior = 'smooth';
@@ -325,3 +263,182 @@
       updatePageContent
   };
 })();
+
+
+ document.addEventListener('DOMContentLoaded', function () {
+  var calendarEl = document.getElementById('eventCalendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    height: 'auto',
+        events: [
+             {
+    title: 'Ongoing Event',
+    start: '2025-06-17',
+    className: 'event-ongoing'
+  },
+  {
+    title: 'Completed Event',
+    start: '2025-06-10',
+    className: 'event-completed'
+  },
+  {
+    title: 'Upcoming Event',
+    start: '2025-06-20',
+    className: 'event-upcoming'
+  }
+        ],
+    themeSystem: 'bootstrap5',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,listWeek'
+    },
+    events: [
+      {
+        title: 'Upcoming Event',
+        start: '2025-06-22',
+        color: '#28a745'
+      },
+      {
+        title: 'Ongoing Event',
+        start: '2025-06-16',
+        end: '2025-06-18',
+        color: '#ffc107'
+      },
+      {
+        title: 'Completed Event',
+        start: '2025-06-10',
+        end: '2025-06-12',
+        color: '#6c757d'
+      }
+    ]
+  });
+
+  calendar.render();
+});
+
+
+
+// Global chart instance variable
+    let attendanceChartInstance;
+
+    const attendanceData = [
+        { month: 'Jan', present_days: 18 },
+        { month: 'Feb', present_days: 20 },
+        { month: 'Mar', present_days: 22 },
+        { month: 'Apr', present_days: 17 },
+        { month: 'May', present_days: 25 },
+        { month: 'Jun', present_days: 19 }
+    ];
+
+    const labels = attendanceData.map(entry => entry.month);
+    const data = attendanceData.map(entry => entry.present_days);
+
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, "rgba(74, 144, 226, 0.4)");
+gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+const chart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [{
+      label: "Attendance",
+      data: [85, 90, 87, 93, 95, 92],
+      fill: true,
+      backgroundColor: gradient,
+      borderColor: "#4A90E2",
+      tension: 0.4,
+      pointBackgroundColor: "#4A90E2",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 6,
+      pointRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      title: { display: false }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#444",
+          font: { family: "Poppins", size: 14 }
+        },
+        grid: {
+          color: "rgba(0,0,0,0.05)"
+        }
+      },
+      y: {
+        ticks: {
+          color: "#444",
+          font: { family: "Poppins", size: 14 }
+        },
+        grid: {
+          color: "rgba(0,0,0,0.05)"
+        }
+      }
+    }
+  }
+});
+
+    // Destroy existing chart instance if it exists
+    if (attendanceChartInstance) {
+        attendanceChartInstance.destroy();
+    }
+
+    attendanceChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Monthly Attendance',
+                data: data,
+                borderColor: '#4A90E2',
+                backgroundColor: 'rgba(74, 144, 226, 0.2)',
+                tension: 0.3,
+                fill: true,
+                pointBackgroundColor: '#fff',
+                pointRadius: 5,
+                borderWidth: 2
+
+                
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Present Days'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    
