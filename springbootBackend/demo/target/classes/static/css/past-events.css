@@ -26,7 +26,7 @@
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #AFCBFF !important;
   margin-bottom: 0.5rem;
 }
 
@@ -38,7 +38,7 @@
 
 /* View Details button */
 .card .btn-primary {
-  background-color: #AA7DCE;
+  background-color: #405E77;
   border: none;
   font-weight: 500;
   border-radius: 0.5rem;
@@ -46,12 +46,12 @@
 }
 
 .card .btn-primary:hover {
-  background-color: #662d94;
+  background-color: #1a364e;
 }
 
 .btn-primary {
-  --bs-btn-active-bg: #662d94 !important;
-  --bs-btn-active-border-color: #662d94 !important;
+  --bs-btn-active-bg: #405E77 !important;
+  --bs-btn-active-border-color: #405E77 !important;
 }
 
 
@@ -79,7 +79,7 @@
 }
 
 .search-bar button.btn-primary {
-  background-color: #AA7DCE;
+  background-color: #405E77;
   color: #fff;
   border: none;
   font-weight: 500;
@@ -87,5 +87,5 @@
 }
 
 .search-bar button.btn-primary:hover {
-  background-color: #662d94;
+  background-color: #1a364e;
 }

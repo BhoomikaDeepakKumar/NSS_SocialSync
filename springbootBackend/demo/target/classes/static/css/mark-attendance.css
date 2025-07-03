@@ -63,8 +63,8 @@ select {
 .btn,
 .btn-primary,
 .btn-success {
-    background-color: #a66dc0 !important;
-    border-color: #C792DF !important;
+    background-color: #405E77 !important;
+    border-color: #405E77 !important;
     color: #fff !important;
     font-weight: 600;
     border-radius: 8px !important;
@@ -75,6 +75,6 @@ select {
 .btn:hover,
 .btn-primary:hover,
 .btn-success:hover {
-    background-color: #6a4379 !important;
-    border-color: #b26ccd !important;
+    background-color: #1a364e !important;
+    border-color: #1a364e !important;
 }

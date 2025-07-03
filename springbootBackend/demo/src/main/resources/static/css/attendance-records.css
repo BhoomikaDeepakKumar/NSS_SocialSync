@@ -20,31 +20,31 @@
 
 .btn-edit {
     color: white !important;
-    background-color: #65d1ab !important;
-    border-color: #65d1ab !important;
+    background-color: #0dcaf0 !important;
+    border-color: #0dcaf0 !important;
 }
 
 /* Keep consistency across states */
 .btn-edit:hover,
 .btn-edit:active,
 .btn-edit:focus {
-    background-color: #99e3ca !important;
+    background-color: #a5f0ff !important;
     color: white !important;
-    border-color: #99e3ca !important;
+    border-color: #a5f0ff !important;
 }
 
 /*Save Button*/
 .btn-success {
     --bs-btn-color: #fff; /* text color remains white */
-    --bs-btn-bg: #a688f1 !important;
-    --bs-btn-border-color: #a688f1  !important;
+    --bs-btn-bg: #1a364e !important;
+    --bs-btn-border-color: #1a364e  !important;
     --bs-btn-hover-color: #fff !important;
-    --bs-btn-hover-bg: #CFBFF7 !important;
-    --bs-btn-hover-border-color: #CFBFF7 !important;
+    --bs-btn-hover-bg: #91a8ba !important;
+    --bs-btn-hover-border-color: #91a8ba !important;
     --bs-btn-focus-shadow-rgb: 75, 201, 181 !important;
     --bs-btn-active-color: #fff !important;
-    --bs-btn-active-bg: #CFBFF7 !important;
-    --bs-btn-active-border-color: #CFBFF7 !important;
+    --bs-btn-active-bg: #91a8ba !important;
+    --bs-btn-active-border-color: #91a8ba !important;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
     --bs-btn-disabled-color: #fff !important;
 }
@@ -114,17 +114,23 @@ Search bar */
 
 /* Present */
 #attendanceTable .bg-success {
-  background-color: #000000 !important; /* Replace with your preferred green */
-  color: white; /* Optional: improves contrast */
+  background-color: white !important; /* Replace with your preferred green */
+  color: black !important; /* Optional: improves contrast */
 }
 
 /* Table colour */
 #attendanceTable.table-striped > tbody > tr:nth-of-type(odd) > * {
-  --bs-table-bg-type:#A2AEBB!important;
-  background-color: #ffb0e0!important;
+  --bs-table-bg-type:#405E77!important;
+  background-color: #405E77!important;
+  color: #fff!important;
 }
 #attendanceTable.table-striped > tbody > tr:nth-of-type(even) > * {
-  background-color: #A2AEBB; /* subtle white-beige */
+  background-color: #405E77; /* subtle white-beige */
+  color: #fff!important;
+}
+/* Optional: consistent hover effect */
+#attendanceTable.table-striped tr:hover td {
+  cursor: pointer;
 }
 thead th {
   background-color: #000000!important;

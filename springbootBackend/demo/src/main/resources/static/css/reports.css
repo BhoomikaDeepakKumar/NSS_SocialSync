@@ -50,17 +50,17 @@
 /* Search Buttton */
 /* Search Button */
 .btn-primary {
-  --bs-btn-bg: #23B5D3 !important;
-  --bs-btn-border-color: #23B5D3 !important;
-  background-color: #23B5D3 !important;
-  border-color: #23B5D3 !important;
+  --bs-btn-bg: #1a364e !important;
+  --bs-btn-border-color: #1a364e !important;
+  background-color: #1a364e !important;
+  border-color: #1a364e !important;
   color: #fff !important;
 }
 
 /* Hover State */
 .btn-primary:hover {
-  background-color: #4FC9E5 !important; /* lighter blue */
-  border-color: #4FC9E5 !important;
+  background-color: #1a364e !important; /* lighter blue */
+  border-color: #1a364e !important;
   color: #fff !important;
 }
 
@@ -68,8 +68,8 @@
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:active:focus {
-  background-color: #A6E6F4 !important; /* even lighter blue */
-  border-color: #A6E6F4 !important;
+  background-color: #1a364e !important; /* even lighter blue */
+  border-color: #1a364e !important;
   color: #fff !important;
   box-shadow: none !important;
 }
@@ -77,22 +77,23 @@
 Table Colour */
 /* Leaderboard table - custom striped row colors */
 #leaderboardTableBody tr:nth-child(odd) td {
-  background-color: #EFC3F5 !important; /* Light blue for odd rows */
+  background-color: #405E77 !important; /* Light blue for odd rows */
+  color: #fff !important; 
 }
 
 #leaderboardTableBody tr:nth-child(even) td {
-  background-color: #EFC3F5 !important; /* Slightly darker blue for even rows */
+  background-color: #405E77 !important; /* Slightly darker blue for even rows */
+    color: #fff !important; 
 }
 
 /* Leaderboard table - uniform green rows */
 #leaderboardTableBody tr td {
-  background-color: #EFC3F5 !important;
+  background-color: #405E77 !important;
   box-shadow: none !important;
 }
 
 /* Optional: consistent hover effect */
 #leaderboardTableBody tr:hover td {
-  background-color: #e292ed !important; /* slightly darker green for hover */
   cursor: pointer;
 }
 

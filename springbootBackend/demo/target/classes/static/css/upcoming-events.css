@@ -17,7 +17,7 @@
 }
 
 .card-title {
-  color: black !important;
+  color: #AFCBFF !important;
   font-weight: 600 !important;
   margin-bottom: 0.5rem !important;
   font-size: 1.25rem !important;
@@ -25,7 +25,7 @@
 }
 
 .view-details-btn {
-  background-color: #AA7DCE;
+  background-color: #405E77;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -37,7 +37,7 @@
 }
 
 .view-details-btn:hover {
-  background-color: #662d94;
+  background-color: #1a364e;
 }
 
 
@@ -66,4 +66,40 @@
   margin-bottom: 0.3rem !important;
   color: #555;
   font-size: 1rem;
+}
+
+
+.search-bar {
+  width: 100vw; /* Viewport width */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+
+}
+
+
+.search-bar input {
+  width: 600px !important;
+  max-width: 100% !important;
+    border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+
+.search-bar button {
+  border-radius: 0.5rem;
+}
+
+.search-bar button.btn-primary {
+  background-color: #405E77;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button.btn-primary:hover {
+  background-color: #1a364e;
 }

@@ -208,19 +208,6 @@
   color: white;
 }
 
-
-
-/* .legend-dot.completed {
-  background-color: rgba(139, 195, 74, 0.93);
-}
-.legend-dot.ongoing {
-  background-color: rgba(255, 111, 0, 1);
-}
-.legend-dot.upcoming {
-  background-color: rgba(0, 176, 255, 1);
-} */
-
-
 .stats-section {
   margin-top: 55px;
   width: 100%;
@@ -287,7 +274,7 @@
 .stat-card>div {
   border-radius: 10px;
   /* background-color: rgba(253, 208, 91, 0.34); */
-  background-color: #FFDBC2;
+  background-color: #405E77;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -310,7 +297,7 @@
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 18px;
   /* color: rgba(39, 205, 165, 1); */
-  color: black;
+  color: white;
 
   font-weight: 500;
   line-height: 1.2;
@@ -332,7 +319,7 @@
   align-items: flex-start;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 18px;
-  color: rgba(39, 205, 165, 1);
+  color: rgb(73, 77, 76);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -366,7 +353,7 @@
 }
 
 .stat-number {
-  color: rgba(39, 205, 165, 1);
+  color: rgb(26, 252, 199);
   font-size: 28px;
   font-family: Nunito, -apple-system, Roboto, Helvetica, sans-serif;
   line-height: 1.2;

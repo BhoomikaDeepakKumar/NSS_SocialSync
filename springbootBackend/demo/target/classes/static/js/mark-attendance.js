@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const eventIdFromQR = urlParams.get("eventId");
@@ -15,26 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 select.appendChild(option);
             });
 
-            // If eventId came from QR code link, pre-select and pre-fill
-            if (eventIdFromQR) {
-                select.value = eventIdFromQR;
-                const selectedEvent = events.find(ev => ev.id == eventIdFromQR);
-                if (selectedEvent) {
-                    document.getElementById("eventName").value = selectedEvent.title;
-                    document.getElementById("eventDate").value = selectedEvent.start.split('T')[0];
-                }
-            }
-
-            // Also update on dropdown change
-            select.addEventListener("change", (e) => {
+            const handleSelectChange = (e) => {
                 const selected = events.find(ev => ev.id == e.target.value);
                 if (selected) {
                     document.getElementById("eventName").value = selected.title;
                     document.getElementById("eventDate").value = selected.start.split('T')[0];
                 }
-            });
+            };
+
+            // Attach the event listener
+            select.addEventListener("change", handleSelectChange);
+
+            if (eventIdFromQR) {
+                // Pre-fill if QR code is used
+                select.value = eventIdFromQR;
+                handleSelectChange({ target: select });
+            } else if (select.options.length > 0) {
+                // Pre-fill the first option manually
+                select.selectedIndex = 0;
+                handleSelectChange({ target: select });
+            }
         });
 });
+
 
 
 function generateQRCode() {
