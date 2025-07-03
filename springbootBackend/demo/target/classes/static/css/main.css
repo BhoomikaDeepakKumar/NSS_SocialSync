@@ -81,23 +81,6 @@ body {
 }
 
 
-
-@media (max-width: 991px) {
-  .header {
-    max-width: 100%;
-    padding: 14px 20px 7px 20px;
-  }
-}
-
-
-
-@media (max-width: 991px) {
-  .brand-title {
-    max-width: 100%;
-    font-size: 40px;
-  }
-}
-
 .user-profile {
   display: flex;
   margin: auto 0;
@@ -106,12 +89,6 @@ body {
   font-family: Gowun Dodum, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 30px;
   white-space: nowrap;
-}
-
-@media (max-width: 991px) {
-  .user-profile {
-    white-space: initial;
-  }
 }
 
 .user-name {
@@ -145,15 +122,6 @@ body {
   padding-top: 80px;
 }
 
-@media (max-width: 991px) {
-  .main-container {
-    max-width: 100%;
-    flex-direction: column;
-    padding-top: 80px;
-    /* still maintain space for header */
-  }
-}
-
 .sidebar {
   position: fixed;
   top: 80px;
@@ -177,17 +145,6 @@ body {
   background-color: #B7C3F3;
 
   z-index: 10;
-
-
-}
-
-
-@media (max-width: 991px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-  }
 }
 
 .navigation {
@@ -203,13 +160,6 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
   font-weight: 400;
-}
-
-@media (max-width: 991px) {
-  .navigation {
-    margin-top: 40px;
-    padding: 41px 20px 100px 20px;
-  }
 }
 
 
@@ -248,15 +198,6 @@ body {
 }
 
 
-
-@media (max-width: 991px) {
-  .nav-item {
-    white-space: initial;
-  }
-}
-
-
-
 .nav-text {
   margin: auto 0;
 }
@@ -275,26 +216,12 @@ body {
   ;
 }
 
-@media (max-width: 991px) {
-  .content {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
 .breadcrumb-section {
   display: flex;
   margin-top: 43px;
   width: 100%;
   flex-direction: column;
   align-items: stretch;
-}
-
-@media (max-width: 991px) {
-  .breadcrumb-section {
-    max-width: 100%;
-    margin-top: 40px;
-  }
 }
 
 .breadcrumb-section>div {
@@ -320,12 +247,6 @@ body {
 
 .current-page {
   color: rgba(23, 39, 47, 1);
-}
-
-@media (max-width: 991px) {
-  .breadcrumb {
-    margin-right: 10px;
-  }
 }
 
 .footer {

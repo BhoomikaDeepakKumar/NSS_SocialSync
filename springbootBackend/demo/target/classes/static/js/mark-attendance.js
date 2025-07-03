@@ -60,10 +60,19 @@ document.getElementById("attendanceForm").addEventListener("submit", function (e
     }
 
     fetch("http://localhost:8083/api/attendance/mark", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ studentId, studentName, eventId })
-    })
-        .then(res => res.ok ? alert("Attendance marked!") : alert("Error marking attendance."))
-        .catch(err => alert("Failed: " + err));
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ studentId, studentName, eventId })
+})
+.then(res => {
+    if (res.status === 409) {
+        alert("You’ve already marked attendance for this event.");
+    } else if (res.ok) {
+        alert("Attendance marked!");
+    } else {
+        alert("Error marking attendance.");
+    }
+})
+.catch(err => alert("Failed: " + err));
+
 });

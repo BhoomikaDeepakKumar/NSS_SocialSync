@@ -21,4 +21,8 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 @Query("SELECT COUNT(e) FROM Event e WHERE e.date BETWEEN :start AND :end")
 int countEventsBetween(@Param("start") LocalDate start, @Param("end") LocalDate end);
 
+Event findTopByDateBeforeOrderByDateDesc(LocalDate now);
+long countByDateBefore(LocalDate now);
+
+
 }

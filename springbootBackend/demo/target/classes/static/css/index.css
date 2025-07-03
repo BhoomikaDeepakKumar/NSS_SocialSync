@@ -16,12 +16,6 @@
   margin-left: 30px;
 }
 
-@media (max-width: 991px) {
-  .section-title {
-    padding: 3px 20px;
-    margin-top: 40px;
-  }
-}
 
 #calendar-wrapper {
   max-width: 90%;
@@ -213,26 +207,12 @@
   width: 100%;
 }
 
-@media (max-width: 991px) {
-  .stats-section {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-}
 
 .stats-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-}
-
-@media (max-width: 991px) {
-  .stats-grid {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
 }
 
 .stat-card {
@@ -263,14 +243,6 @@
 }
 
 
-
-@media (max-width: 991px) {
-  .stat-card {
-    width: 100%;
-    flex: 1 1 100%;
-  }
-}
-
 .stat-card>div {
   border-radius: 10px;
   /* background-color: rgba(253, 208, 91, 0.34); */
@@ -285,11 +257,7 @@
   align-items: start;
 }
 
-@media (max-width: 991px) {
-  .stat-card>div {
-    margin-top: 15px;
-  }
-}
+
 
 .stat-title {
   margin-left: 15px;
@@ -305,12 +273,7 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 991px) {
-  .stat-title {
-    margin-left: 10px;
-    padding-right: 20px;
-  }
-}
+
 
 .stat-header {
   z-index: 10;
@@ -324,11 +287,7 @@
   line-height: 1.2;
 }
 
-@media (max-width: 991px) {
-  .stat-header {
-    padding-right: 20px;
-  }
-}
+
 
 .stat-header .stat-title {
   align-self: end;

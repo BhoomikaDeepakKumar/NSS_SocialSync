@@ -12,6 +12,7 @@ import java.util.List;
 import jakarta.transaction.Transactional;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
+      boolean existsByStudentIdAndEventId(String studentId, Long eventId);
 
     int countByEventId(Long eventId);
 

@@ -77,23 +77,6 @@ function populateEventFilter(data) {
 }
 
 
-// function displayPage(data) {
-//   const tableBody = document.querySelector("#attendanceTable tbody");
-//   tableBody.innerHTML = "";
-
-//  data.forEach(record => {
-//   const row = `<tr>
-//     <td><input type="checkbox" class="rowCheckbox" data-id="${record.id}"></td>
-//     <td>${record.studentName}</td>
-//     <td>${record.studentId}</td>
-//     <td>${record.eventName}</td>
-//     <td>${record.date}</td>
-//     <td><span class="badge bg-success">Present</span></td>
-//   </tr>`;
-//   tableBody.innerHTML += row;
-// });
-// }
-
 
 function renderAttendanceRows() {
   const tableBody = document.querySelector("#attendanceTable tbody");
@@ -178,22 +161,6 @@ function toggleEditMode() {
   deleteBtn.style.display = editMode ? "inline-block" : "none";
 }
 
-// User Feedback on Bulk Upload
-// .then(msg => {
-//   showToast("Upload successful!", "success");
-//   fetchAttendanceData(); 
-// })
-
-// function showToast(message, type = "info") {
-//   const toast = document.createElement("div");
-//   toast.className = `toast align-items-center text-white bg-${type} border-0 show`;
-//   toast.role = "alert";
-//   toast.innerHTML = `<div class="d-flex p-2">${message}</div>`;
-//   document.body.appendChild(toast);
-//   setTimeout(() => toast.remove(), 3000);
-// }
-
-
 
 function updatePaginationInfo(totalPages) {
   document.getElementById("paginationInfo").textContent = `Page ${currentPage + 1} of ${totalPages}`;
@@ -217,10 +184,33 @@ function resetFilters() {
 }
 
 
-function exportCSV() {
+// function exportCSV() {
+//   let csv = "Student Name,Student ID,Event Name,Date,Status\n";
+//   attendanceData.forEach(record => {
+//     // Wrap each field in double quotes to prevent Excel formatting issues
+//     const row = `"${record.studentName}","${record.studentId}","${record.eventName}","${record.date}","Present"\n`;
+//     csv += row;
+//   });
+
+//   const blob = new Blob([csv], { type: "text/csv" });
+//   const url = URL.createObjectURL(blob);
+//   const a = document.createElement("a");
+//   a.href = url;
+//   a.download = "attendance_records.csv";
+//   a.click();
+//   URL.revokeObjectURL(url);
+// }
+
+async function exportCSV() {
+  const allFilteredData = await fetchAllFilteredAttendanceData();
+
+  if (allFilteredData.length === 0) {
+    alert("No records to export.");
+    return;
+  }
+
   let csv = "Student Name,Student ID,Event Name,Date,Status\n";
-  attendanceData.forEach(record => {
-    // Wrap each field in double quotes to prevent Excel formatting issues
+  allFilteredData.forEach(record => {
     const row = `"${record.studentName}","${record.studentId}","${record.eventName}","${record.date}","Present"\n`;
     csv += row;
   });
@@ -234,13 +224,46 @@ function exportCSV() {
   URL.revokeObjectURL(url);
 }
 
-function exportPDF() {
+// function exportPDF() {
+//   const { jsPDF } = window.jspdf;
+//   const doc = new jsPDF();
+
+//   const headers = [["Student Name", "Student ID", "Event Name", "Date", "Status"]];
+
+//   const rows = attendanceData.map(record => [
+//     record.studentName,
+//     record.studentId,
+//     record.eventName,
+//     record.date,
+//     "Present"
+//   ]);
+
+//   doc.text("Attendance Records", 14, 15);
+//   doc.autoTable({
+//     startY: 20,
+//     head: headers,
+//     body: rows,
+//     styles: { fontSize: 10 },
+//     theme: "striped",
+//     headStyles: { fillColor: [75, 192, 192] }
+//   });
+
+//   doc.save("attendance_records.pdf");
+// }
+
+async function exportPDF() {
+  const allFilteredData = await fetchAllFilteredAttendanceData();
+
+  if (allFilteredData.length === 0) {
+    alert("No records to export.");
+    return;
+  }
+
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
   const headers = [["Student Name", "Student ID", "Event Name", "Date", "Status"]];
-
-  const rows = attendanceData.map(record => [
+  const rows = allFilteredData.map(record => [
     record.studentName,
     record.studentId,
     record.eventName,
@@ -260,6 +283,7 @@ function exportPDF() {
 
   doc.save("attendance_records.pdf");
 }
+
 
 function handleBulkUpload(event) {
   const file = event.target.files[0];
@@ -534,4 +558,27 @@ function saveEditMode() {
 
   // Refresh the table without checkboxes
   renderAttendanceRows();
+}
+
+//export all pages
+async function fetchAllFilteredAttendanceData() {
+  const search = document.getElementById("searchInput").value;
+  const date = document.getElementById("dateFilter").value;
+  const eventId = document.getElementById("eventFilter").value;
+
+  let url = `http://localhost:8083/api/attendance/records?page=0&size=100000`; // fetch all matching
+
+  if (search) url += `&search=${encodeURIComponent(search)}`;
+  if (date) url += `&date=${encodeURIComponent(date)}`;
+  if (eventId) url += `&eventId=${encodeURIComponent(eventId)}`;
+
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    return result.content || [];
+  } catch (error) {
+    console.error("Failed to fetch all filtered data:", error);
+    alert("Error fetching records for export.");
+    return [];
+  }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,101 +8,46 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="/css/signup.css">
-   <link rel="stylesheet" href="/css/register.css" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jura:wght@700&family=Roboto&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="/css/register.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jura:wght@700&family=Roboto&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="/js/signup.js" defer></script>
 </head>
+
 <body>
-      <main class="page">
-      <header class="header">
-        <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
-      </header> 
-      
-      <h1 class="title">SIGN UP</h1>
-      <section class="container">
-          <form class="form" id="signupForm">          
-            <label class="form-label" for="username" >Username</label>
-            <input type="text" class="form-input" id="username" name="username" placeholder="Enter username" required />
-            <label class="form-label" for="email" >Email ID</label>
-            <input type="email" class="form-input" id="email" name="email" placeholder="Enter email" required/>
-            
-            <label class="form-label" for="password">Password</label>
-            <div class="password-container">
-            <input type="password" class="form-input" id="password" name="password" placeholder="Enter password" required/>
-            <i class="fa-solid fa-eye toggle-password" data-target="password" onclick="togglePassword(this)"></i>
-          </div>
-
-          <label class="form-label" for="password">Confirm Password</label>
-            <div class="password-container">
-          <input type="password" class="form-input" id="passwordcon" name="passwordcon" placeholder="Enter password"required>
-            <i class="fa-solid fa-eye toggle-password" data-target="passwordcon" onclick="togglePassword(this)"></i>
-          </div>
-
-          <button type="submit" class="button">Sign Up</button>
-          <div class="existing-user-container">
+  <main class="page">
+    <header class="header">
+      <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+    </header>
+    <h1 class="title">SIGN UP</h1>
+    <section class="container">
+      <form class="form" id="signupForm">
+        <label class="form-label" for="username">Username</label>
+        <input type="text" class="form-input" id="username" name="username" placeholder="Enter username" required />
+        <label class="form-label" for="email">Email ID</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="Enter email" required />
+        <label class="form-label" for="password">Password</label>
+        <div class="password-container">
+          <input type="password" class="form-input" id="password" name="password" placeholder="Enter password"
+            required />
+          <i class="fa-solid fa-eye toggle-password" data-target="password" onclick="togglePassword(this)"></i>
+        </div>
+        <label class="form-label" for="password">Confirm Password</label>
+        <div class="password-container">
+          <input type="password" class="form-input" id="passwordcon" name="passwordcon" placeholder="Enter password"
+            required>
+          <i class="fa-solid fa-eye toggle-password" data-target="passwordcon" onclick="togglePassword(this)"></i>
+        </div>
+        <button type="submit" class="button">Sign Up</button>
+        <div class="existing-user-container">
           <p class="login-text">
             Existing User? <a href="/req/login" class="login-link">Login here</a>
           </p>
         </div>
-
-
-    </form>
-  </section>
-   </main>
+      </form>
+    </section>
+  </main>
 </body>
+
 </html>
-<script>
-  const form = document.querySelector('form');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault(); // 🚫 prevent form from submitting normally
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('passwordcon').value;
-    const email = document.getElementById('email').value;
-
-    const data = {
-      username,
-      email,
-      password
-    };
-
-    if (password === confirmPassword) {
-      fetch('/req/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => {
-  console.log("HTTP Status:", response.status); // log status
-  return response.text().then(message => {
-    console.log("Response message:", message); // log body
-
-    if (response.ok) {
-      alert(message);
-      window.location.href = '/req/login';
-    } else {
-        alert("Signup failed: " + (message || "Unknown error occurred."));
-    }
-  });
-})
-
-      .catch(error => {
-        alert("Something went wrong: " + error);
-      });
-    } else {
-      alert("Passwords do not match!");
-    }
-  });
-</script>
-

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("heatmapMonth").value = currentMonth;
 
 
-
   fetchStudentNames();
   loadLeaderboard();
    drawMonthlyLineChart(); // draw with current month
@@ -16,22 +15,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("lineChartMonth").addEventListener("change", drawMonthlyLineChart);
   document.getElementById("heatmapMonth").addEventListener("change", drawHeatmap);
-  document.getElementById("searchBtn").addEventListener("click", () => {
-    const input = document.getElementById("searchInput").value.trim().toLowerCase();
-    const student = allStudents.find(s =>
-      s.studentId.toLowerCase() === input || s.studentName.toLowerCase() === input
-    );
+  let currentSearchedStudentId = null;
 
-    if (student) {
-      fetchStudentPieChart(student.studentId);
-    } else {
-      const message = document.getElementById("pieChartMessage");
-      const canvas = document.getElementById("studentAttendancePieChart");
-      if (pieChartInstance) pieChartInstance.destroy();
-      canvas.style.display = "none";
-      message.textContent = "Student not found. Please enter a valid ID or name.";
-    }
-  });
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const input = document.getElementById("searchInput").value.trim().toLowerCase();
+  const student = allStudents.find(s =>
+    s.studentId.toLowerCase() === input || s.studentName.toLowerCase() === input
+  );
+
+  if (student) {
+    currentSearchedStudentId = student.studentId; // Cache it
+    fetchStudentPieChart(student.studentId);
+  } else {
+    currentSearchedStudentId = null;
+    const message = document.getElementById("pieChartMessage");
+    const canvas = document.getElementById("studentAttendancePieChart");
+    if (pieChartInstance) pieChartInstance.destroy();
+    canvas.style.display = "none";
+    message.textContent = "Student not found. Please enter a valid ID or name.";
+  }
+});
+
+document.getElementById("academicYearSelect").addEventListener("change", () => {
+  const val = document.getElementById("academicYearSelect").value;
+  if (val === "current") {
+    const now = new Date();
+    const academicStartYear = now.getMonth() + 1 < 7 ? now.getFullYear() - 1 : now.getFullYear();
+    const start = `${academicStartYear}-07-01`;
+    const end = now.toISOString().split("T")[0];
+    document.getElementById("academicYearInfo").textContent = `Showing data from ${start} to ${end}`;
+  } else {
+    const [startYear, endYear] = val.split("-");
+    document.getElementById("academicYearInfo").textContent = `Showing data from ${startYear}-07-01 to ${endYear}-06-30`;
+  }
+
+  // 🔄 Redraw chart if a student was previously searched
+  if (currentSearchedStudentId) {
+    fetchStudentPieChart(currentSearchedStudentId);
+  }
+});
+
+
 });
 
 
@@ -99,8 +123,22 @@ async function fetchStudentPieChart(studentIdFromClick = null) {
   }
 
   const studentId = student.studentId;
-  const start = "2024-07-01";
-  const end = "2025-06-30";
+ const selectedYear = document.getElementById("academicYearSelect").value;
+let start, end;
+
+if (selectedYear === "current") {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const isBeforeJuly = now.getMonth() + 1 < 7;
+  const academicStartYear = isBeforeJuly ? currentYear - 1 : currentYear;
+  start = `${academicStartYear}-07-01`;
+  end = now.toISOString().split("T")[0]; // today's date
+} else {
+  const [startYear, endYear] = selectedYear.split("-");
+  start = `${startYear}-07-01`;
+  end = `${endYear}-06-30`;
+}
+
 
   try {
     const res = await fetch(`http://localhost:8083/api/reports/student/${studentId}?start=${start}&end=${end}`);
@@ -260,3 +298,52 @@ async function drawHeatmap() {
 
   container.appendChild(heatmap);
 }
+
+
+// Populate academic year options
+function populateAcademicYearOptions() {
+  const select = document.getElementById("academicYearSelect");
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1;
+
+  const startYear = 2021;
+  const includeCurrent = currentMonth >= 7; // Academic year starts in July
+  const lastCompletedAcademicYear = includeCurrent ? currentYear - 1 : currentYear - 1;
+
+  // Populate past academic years only up to the last completed one
+  for (let y = startYear; y <= lastCompletedAcademicYear; y++) {
+    const option = document.createElement("option");
+    option.value = `${y}-${y + 1}`;
+    option.textContent = `${y}-${y + 1}`;
+    select.appendChild(option);
+  }
+
+  // If it's July or later, add a special "Current Academic Year" option
+  if (includeCurrent) {
+    const currentOption = document.createElement("option");
+    currentOption.value = "current";
+    currentOption.textContent = "Current Academic Year";
+    currentOption.selected = true;
+    select.appendChild(currentOption);
+  } else {
+    // Default select the most recent academic year
+    select.selectedIndex = select.options.length - 1;
+  }
+}
+
+
+
+document.getElementById("academicYearSelect").addEventListener("change", () => {
+  const val = document.getElementById("academicYearSelect").value;
+  if (val === "current") {
+    const now = new Date();
+    const academicStartYear = now.getMonth() + 1 < 7 ? now.getFullYear() - 1 : now.getFullYear();
+    const start = `${academicStartYear}-07-01`;
+    const end = now.toISOString().split("T")[0];
+    document.getElementById("academicYearInfo").textContent = `Showing data from ${start} to ${end}`;
+  } else {
+    const [startYear, endYear] = val.split("-");
+    document.getElementById("academicYearInfo").textContent = `Showing data from ${startYear}-07-01 to ${endYear}-06-30`;
+  }
+});

@@ -1,4 +1,3 @@
-/* Remember me container */
 .remember-container {
   align-self: flex-start;
   display: flex;
@@ -7,7 +6,6 @@
   font-size: 18px;
 }
 
-/* Remember checkbox */
 .remember-checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -18,7 +16,6 @@
   height: 24px;
   cursor: pointer;
   position: relative;
- 
 }
 
 .remember-checkbox:checked::after {
@@ -31,12 +28,10 @@
   font-size: 16px;
 }
 
-/* Remember me label */
 .remember-label {
   cursor: pointer;
 }
 
-/* Links container */
 .login-links {
   align-self: flex-start;
   display: flex;
@@ -47,7 +42,6 @@
   color: rgba(47, 137, 125, 1);
 }
 
-/* Forgot password link */
 .forgot-password-link {
   align-self: flex-start;
   color: rgba(47, 137, 125, 1);
@@ -58,17 +52,14 @@
   text-decoration: underline;
 }
 
-/* Register prompt */
 .register-prompt {
   margin-top: 10px;
 }
 
-/* Register text */
 .register-text {
   color: rgba(47, 74, 85, 1);
 }
 
-/* Register link */
 .register-link {
   color: rgba(47, 137, 125, 1);
   text-decoration: none;
@@ -78,4 +69,3 @@
 .register-link:hover {
   text-decoration: underline;
 }
-

@@ -5,6 +5,8 @@ import com.example.demo.Model.Event;
 import com.example.demo.Repository.AttendanceRepository;
 import com.example.demo.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
@@ -28,19 +30,30 @@ public class AttendanceController {
 
     // ✅ Save attendance
     @PostMapping("/mark")
-    public Attendance markAttendance(@RequestBody Attendance attendance) {
-        return attendanceRepo.save(attendance);
+public ResponseEntity<String> markAttendance(@RequestBody Attendance attendance) {
+    boolean alreadyMarked = attendanceRepo.existsByStudentIdAndEventId(attendance.getStudentId(), attendance.getEventId());
+
+    if (alreadyMarked) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Attendance already marked for this event.");
     }
 
-    @PostMapping("/upload")
-    public String uploadBulkAttendance(@RequestBody List<Attendance> attendanceList) {
-        System.out.println("Received records: " + attendanceList.size());
-        for (Attendance att : attendanceList) {
-            System.out.println(att); // <-- Log each record
+    attendanceRepo.save(attendance);
+    return ResponseEntity.ok("Attendance marked successfully.");
+}
+
+
+   @PostMapping("/upload")
+public String uploadBulkAttendance(@RequestBody List<Attendance> attendanceList) {
+    int savedCount = 0;
+    for (Attendance att : attendanceList) {
+        if (!attendanceRepo.existsByStudentIdAndEventId(att.getStudentId(), att.getEventId())) {
             attendanceRepo.save(att);
+            savedCount++;
         }
-        return "Upload successful";
     }
+    return "Uploaded " + savedCount + " new records successfully.";
+}
+
 
     // ✅ Redirect when scanning QR
     @GetMapping("/scan")

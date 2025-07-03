@@ -79,14 +79,12 @@
               <input type="text" id="searchInput" placeholder="Enter Student ID" class="form-control w-auto">
 
               <select id="academicYearSelect" class="form-select w-auto">
-                <option value="2024">2024-2025</option>
-                <option value="2023">2023-2024</option>
-                <option value="2022">2022-2023</option>
-                <!-- Add more years as needed -->
+                <!-- options will be populated dynamically -->
               </select>
 
               <button onclick="fetchStudentPieChart()" class="btn btn-primary" id="searchBtn">Search</button>
             </div>
+             <p id="academicYearInfo" style="margin-top: 8px; color: #555;"></p>
 
             <canvas id="studentAttendancePieChart" width="400" height="400" style="display: none;"
               class="mt-4"></canvas>

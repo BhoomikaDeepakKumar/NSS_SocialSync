@@ -4,15 +4,15 @@
     align-items: center;
     width: 100%;
     width: 100%;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
   }
-  
+
   .password-container .form-input {
     width: 100%;
-    padding-right: 40px; /* space for the icon */
-    margin-bottom: 0;     /* remove margin between input and icon */
+    padding-right: 40px;
+    margin-bottom: 0;
   }
-  
+
   .toggle-password {
     position: absolute;
     right: 15px;
@@ -22,30 +22,29 @@
     cursor: pointer;
     font-size: 20px;
   }
-  
+
   .existing-user-container {
-    width: 100%;            /* Full width to align with inputs */
-    
-    margin-top: 20px;       /* Space above */
-    box-sizing: border-box; /* Ensure padding works nicely */
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
   }
+
   .login-text {
     font-family: "Jura", sans-serif;
     font-size: 20px;
     color: #2f4a55;
-    margin: 0;              /* Reset margins inside container */
+    margin: 0;
     line-height: 1.5;
+    text-decoration: none;
   }
-  
+
   .login-link {
     color: #2f897d;
     cursor: pointer;
     margin-left: 5px;
+    text-decoration: none;
   }
 
   .login-link:hover {
     text-decoration: underline;
   }
-  
-  
-  
