@@ -50,10 +50,10 @@
 /* Search Buttton */
 /* Search Button */
 .btn-primary {
-  --bs-btn-bg: #1a364e !important;
-  --bs-btn-border-color: #1a364e !important;
-  background-color: #1a364e !important;
-  border-color: #1a364e !important;
+  --bs-btn-bg: #405E77 !important;
+  --bs-btn-border-color: #405E77 !important;
+  background-color: #405E77 !important;
+  border-color: #405E77 !important;
   color: #fff !important;
 }
 

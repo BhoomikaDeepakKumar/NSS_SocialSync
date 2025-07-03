@@ -445,6 +445,7 @@ async function handleBulkDateChange() {
 //Download Template 
 //Excel event name and id
 async function fetchEventsAndDownloadTemplate() {
+  console.log("Download button clicked"); // 🔍 Add this to confirm click works
   const eventDropdown = document.getElementById("bulkEventFilter");
   const selectedEventName = eventDropdown.value;
 
@@ -482,8 +483,8 @@ const selectedEvent = events.find(e =>
   const wb = XLSX.utils.book_new();
 
   const wsData = [
-    ["Student Name", "Roll Number", "Event Id", "Event Name", "Date (YYYY-MM-DD)", "Status"],
-    ["", "", selectedEvent.id, selectedEvent.eventName, selectedEvent.date, ""]
+    ["Student Name", "Roll Number", "Event Id", "Event Name", "Date (YYYY-MM-DD)"],
+    ["", "", selectedEvent.id, selectedEvent.eventName, selectedEvent.date]
   ];
 
   const ws = XLSX.utils.aoa_to_sheet(wsData);
