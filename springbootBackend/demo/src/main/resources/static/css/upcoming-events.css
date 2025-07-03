@@ -1,0 +1,69 @@
+.event-details {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-body {
+  color: #555 !important;
+  font-family: 'Inter', sans-serif !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.card-title {
+  color: black !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.25rem !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.view-details-btn {
+  background-color: #AA7DCE;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-top: 0.8rem !important;
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background-color: #662d94;
+}
+
+
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px !important;
+  margin-top: 3rem !important;
+}
+
+.event-card {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+#upcoming-events-list {
+  margin-top: 3.45rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-text {
+  margin-bottom: 0.3rem !important;
+  color: #555;
+  font-size: 1rem;
+}

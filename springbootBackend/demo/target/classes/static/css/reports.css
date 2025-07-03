@@ -1,0 +1,126 @@
+#studentDropdown {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+}
+
+#suggestionsList {
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+#suggestionsList li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#suggestionsList li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Pie Chart */
+#studentAttendancePieChart {
+  width: 600px !important;
+  height: 600px !important;
+}
+
+#studentAttendancePieChart {
+  display: block;
+  margin: 0 auto;
+}
+
+.report-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem; /* adjust as needed */
+  color: #2c3e50; /* a deep blue-gray tone */
+  margin-bottom: 1rem;
+  border-left: 4px solid #23B5D3;
+  padding-left: 10px;
+}
+/*   background-color: #1a6a75;
+ */
+
+/* Search Buttton */
+/* Search Button */
+.btn-primary {
+  --bs-btn-bg: #23B5D3 !important;
+  --bs-btn-border-color: #23B5D3 !important;
+  background-color: #23B5D3 !important;
+  border-color: #23B5D3 !important;
+  color: #fff !important;
+}
+
+/* Hover State */
+.btn-primary:hover {
+  background-color: #4FC9E5 !important; /* lighter blue */
+  border-color: #4FC9E5 !important;
+  color: #fff !important;
+}
+
+/* Active State */
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+  background-color: #A6E6F4 !important; /* even lighter blue */
+  border-color: #A6E6F4 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+/* 
+Table Colour */
+/* Leaderboard table - custom striped row colors */
+#leaderboardTableBody tr:nth-child(odd) td {
+  background-color: #EFC3F5 !important; /* Light blue for odd rows */
+}
+
+#leaderboardTableBody tr:nth-child(even) td {
+  background-color: #EFC3F5 !important; /* Slightly darker blue for even rows */
+}
+
+/* Leaderboard table - uniform green rows */
+#leaderboardTableBody tr td {
+  background-color: #EFC3F5 !important;
+  box-shadow: none !important;
+}
+
+/* Optional: consistent hover effect */
+#leaderboardTableBody tr:hover td {
+  background-color: #e292ed !important; /* slightly darker green for hover */
+  cursor: pointer;
+}
+
+/* Leaderboard table header styling */
+/* Force black background and white text for the table header */
+table.table thead {
+  background-color: #000 !important;
+  background-image: none !important; /* removes any subtle Bootstrap gradient */
+}
+
+table.table thead th {
+  color: #fff !important;
+  background-color: #000 !important; /* apply to th directly in case thead fails */
+  box-shadow: none !important;       /* remove any Bootstrap inset box-shadow */
+}
+
+/* Make cursor a pointer over any clickable day cell inside the heatmap */
+#attendanceHeatmap div,
+#attendanceHeatmap td,
+#attendanceHeatmap .day,
+#attendanceHeatmap rect {
+  cursor: pointer !important;
+}
+
+/* Line Graph */
+
+#monthlyAttendanceLineChart{
+  width: 100% !important;
+  /* height: 300px !important; */
+  margin: 0 auto !important;
+}

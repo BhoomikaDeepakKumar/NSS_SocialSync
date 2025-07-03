@@ -1,0 +1,91 @@
+/* Container spacing */
+#past-events-container {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Event card styles */
+.card {
+  border-radius: 1rem;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card content spacing */
+.card-body {
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* Card text */
+.card-text {
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+/* View Details button */
+.card .btn-primary {
+  background-color: #AA7DCE;
+  border: none;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #662d94;
+}
+
+.btn-primary {
+  --bs-btn-active-bg: #662d94 !important;
+  --bs-btn-active-border-color: #662d94 !important;
+}
+
+
+.search-bar {
+  width: 100vw; /* Viewport width */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+
+}
+
+
+.search-bar input {
+  width: 600px !important;
+  max-width: 100% !important;
+    border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+
+.search-bar button {
+  border-radius: 0.5rem;
+}
+
+.search-bar button.btn-primary {
+  background-color: #AA7DCE;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button.btn-primary:hover {
+  background-color: #662d94;
+}

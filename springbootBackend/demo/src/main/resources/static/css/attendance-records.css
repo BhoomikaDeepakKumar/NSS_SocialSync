@@ -1,0 +1,131 @@
+/* Delete Button */
+#deleteSelectedBtn {
+  white-space: nowrap;
+}
+
+
+.btn-danger {
+     --bs-btn-bg: #ed1d0e !important;
+ --bs-btn-border-color: #ed1d0e !important;
+ --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #e8a9a4 !important;
+    --bs-btn-hover-border-color: #e8a9a4 !important;
+     --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #e8a9a4 !important;
+    --bs-btn-active-border-color: #e8a9a4 !important;
+}
+
+/* Edit Button */
+
+
+.btn-edit {
+    color: white !important;
+    background-color: #65d1ab !important;
+    border-color: #65d1ab !important;
+}
+
+/* Keep consistency across states */
+.btn-edit:hover,
+.btn-edit:active,
+.btn-edit:focus {
+    background-color: #99e3ca !important;
+    color: white !important;
+    border-color: #99e3ca !important;
+}
+
+/*Save Button*/
+.btn-success {
+    --bs-btn-color: #fff; /* text color remains white */
+    --bs-btn-bg: #a688f1 !important;
+    --bs-btn-border-color: #a688f1  !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #CFBFF7 !important;
+    --bs-btn-hover-border-color: #CFBFF7 !important;
+    --bs-btn-focus-shadow-rgb: 75, 201, 181 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #CFBFF7 !important;
+    --bs-btn-active-border-color: #CFBFF7 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+}
+
+/* Export Button */
+.btn-pdf {
+  background-color: #ffb300 !important; /* soft coral red */
+  color: white !important;
+  border-color: #ffb300 !important;
+}
+
+.btn-pdf:hover,
+.btn-pdf:focus,
+.btn-pdf:active {
+  background-color: #fdd4a4 !important;
+  border-color: #fdd4a4 !important;
+  color: white !important;
+}
+
+/* Download Template */
+.btn-outline-primary {
+    --bs-btn-color: #03045E !important;
+    --bs-btn-border-color: #03045E !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #03045E !important;
+    --bs-btn-hover-border-color: #03045E !important;
+    --bs-btn-focus-shadow-rgb: 3, 4, 94 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #03045E !important;
+    --bs-btn-active-border-color: #03045E !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #03045E !important;
+    --bs-btn-disabled-bg: transparent !important;
+    --bs-btn-disabled-border-color: #03045E !important;
+    --bs-gradient: none !important;
+}
+
+.btn-outline-info {
+    --bs-btn-color: #0dcaf0 !important;
+    --bs-btn-border-color: #0dcaf0 !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #0dcaf0 !important;
+    --bs-btn-hover-border-color: #0dcaf0 !important;
+    --bs-btn-focus-shadow-rgb: 13, 202, 240 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #0dcaf0 !important;
+    --bs-btn-active-border-color: #0dcaf0 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #0dcaf0 !important;
+    --bs-btn-disabled-bg: transparent !important;
+    --bs-btn-disabled-border-color: #0dcaf0 !important;
+    --bs-gradient: none !important;
+}
+
+/* Bulk Upload Heading */
+h5.custom-heading {
+    font-size: 1.5rem !important;       /* Make it slightly larger */
+    color: #4c0082 !important;          /* Deep purple shade */
+    font-weight: 600 !important;        /* Slightly bolder than normal */
+    text-transform: uppercase !important; /* Optional: All caps */
+}
+/* 
+Search bar */
+.form-control {
+      width: 250px !important;
+}
+
+/* Present */
+#attendanceTable .bg-success {
+  background-color: #000000 !important; /* Replace with your preferred green */
+  color: white; /* Optional: improves contrast */
+}
+
+/* Table colour */
+#attendanceTable.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type:#A2AEBB!important;
+  background-color: #ffb0e0!important;
+}
+#attendanceTable.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: #A2AEBB; /* subtle white-beige */
+}
+thead th {
+  background-color: #000000!important;
+}
