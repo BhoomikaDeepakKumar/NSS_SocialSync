@@ -90,6 +90,11 @@
 
 }
 
+.fc .fc-daygrid-day-frame {
+    min-height: 0%;
+    position: relative;
+}
+
 /* Calendar text improvements */
 .fc {
   font-size: 14px;

@@ -187,33 +187,3 @@ function updateNavigationInteractions() {
         showEventDetails,
         updatePageContent
     };
-
-
-    // calendar setup
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     const calendarEl = document.getElementById('eventCalendar');
-
-    //     const calendar = new FullCalendar.Calendar(calendarEl, {
-    //         initialView: 'dayGridMonth',
-    //         height: 'auto',
-    //         events: '/api/events', // Adjust if needed
-    //         headerToolbar: {
-    //             left: 'prev,next today',
-    //             center: 'title',
-    //             right: 'dayGridMonth,timeGridWeek,timeGridDay'
-    //         }
-    //     });
-
-    //     calendar.render();
-    // });
-
-
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     fetch('http://localhost:8083/api/dashboard/stats')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             document.getElementById("last-event-attendance").textContent = data.lastEventAttendance ?? 0;
-    //             document.getElementById("average-attendance").textContent = data.averageAttendance ?? 0;
-    //         })
-    //         .catch(err => console.error('Error loading dashboard stats:', err));
-    // });
