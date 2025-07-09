@@ -30,17 +30,17 @@
                     </div>
 
 
-                          <div class="search-bar mb-4 d-flex flex-wrap gap-2 align-items-center">
+ <div class="search-bar mb-4 d-flex flex-wrap gap-2 align-items-center">
   <input
     type="text"
     id="searchInput"
     class="form-control"
     placeholder="Search by event name or date (YYYY-MM-DD)"
     style="max-width: 300px;"
+    oninput="filterEvents()" 
   />
-  <button class="btn btn-primary" onclick="filterEvents()">Search</button>
-  <button class="btn btn-outline-secondary" onclick="resetSearch()">Reset</button>
 </div>
+
                     <div id="upcoming-events-list" class="row">
                         <!-- Events will be inserted here dynamically -->
                     </div>

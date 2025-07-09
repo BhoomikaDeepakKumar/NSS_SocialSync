@@ -160,7 +160,23 @@ function updateNavigationInteractions() {
             }
         });
         calendar.render();
+
+        const observer = new MutationObserver(() => {
+    const calendarTable = document.querySelector(".fc-scrollgrid-sync-table");
+    if (calendarTable) {
+        calendarTable.style.width = "100%";
     }
+});
+
+observer.observe(calendarEl, {
+    childList: true,
+    subtree: true
+});
+
+    }
+
+
+
 
     // Dashboard stats fetch
     fetch('http://localhost:8083/api/dashboard/stats')

@@ -463,3 +463,128 @@ a:hover {
 .fc .fc-timegrid-slot-label-frame {
     background-color: #f0f8ff !important;  /* Light background */
 }
+
+/* Mobile responsiveness */
+/* 📱 Responsive layout for smaller devices */
+@media (max-width: 768px) {
+  /* Section title - center on mobile */
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    margin: 2rem auto 1rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  /* Calendar wrapper adjustments */
+  #calendar-wrapper {
+    width: 95%;
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  #eventCalendar {
+    min-width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Stat section stacking vertically */
+  .stats-grid {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .stat-card {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .stat-card > div {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .stat-title {
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .stat-number,
+  .stat-number-large {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .stat-change,
+  .change-percent,
+  .change-text {
+    font-size: 0.9rem;
+  }
+
+  /* Calendar tweaks for readability */
+  .fc-toolbar-title {
+    font-size: 1.2rem;
+  }
+
+  .fc-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+.fc-col-header
+{
+   width: 100% !important;
+}
+  .fc-daygrid-day-number {
+    font-size: 0.75rem;
+    padding: 0.2rem;
+  }
+
+  .fc-event {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
+
+
+    /* Stack toolbar elements vertically */
+  .fc-header-toolbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  .fc-toolbar-chunk {
+    width: 100%;
+  }
+
+  .fc-toolbar-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .fc-button-group {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size:0.5rem !important;
+}
+
+}
+
+
+
+.fc .fc-scrollgrid-sync-table {
+  width: 100% !important;
+}
+
+.fc .fc-daygrid-body {
+  width: 100% !important;
+}

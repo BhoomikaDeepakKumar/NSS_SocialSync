@@ -80,11 +80,13 @@
 
 
 .search-bar input {
-  width: 600px !important;
   max-width: 100% !important;
     border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   margin-left: 1rem;
+}
+.search-bar{
+  width:100% !important;
 }
 
 

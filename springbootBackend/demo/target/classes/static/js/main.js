@@ -147,10 +147,18 @@ function initializeResponsiveMenu() {
     }
 
     menuButton.addEventListener('click', function () {
-        const isOpen = sidebar.style.transform === 'translateX(0px)';
-        sidebar.style.transform = isOpen ? 'translateX(-100%)' : 'translateX(0px)';
-        sidebar.style.transition = 'transform 0.3s ease';
-    });
+    const isOpen = sidebar.style.transform === 'translateX(0px)';
+    sidebar.style.transform = isOpen ? 'translateX(-100%)' : 'translateX(0px)';
+    sidebar.style.transition = 'transform 0.3s ease';
+
+    // ➕ Toggle class on content
+    if (isOpen) {
+        content.classList.add('expanded');
+    } else {
+        content.classList.remove('expanded');
+    }
+});
+
 
     window.addEventListener('resize', checkMobile);
     checkMobile();

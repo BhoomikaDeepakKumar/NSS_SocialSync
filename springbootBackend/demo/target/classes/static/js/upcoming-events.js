@@ -11,15 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching events:", error);
     });
 
-  // Trigger search on Enter key
-  const searchInput = document.getElementById("searchInput");
-  if (searchInput) {
-    searchInput.addEventListener("keyup", function (e) {
-      if (e.key === "Enter") {
-        filterEvents();
-      }
-    });
-  }
+  // Live filter on every keystroke
+const searchInput = document.getElementById("searchInput");
+if (searchInput) {
+  searchInput.addEventListener("input", filterEvents);
+}
+
 });
 
 function renderEvents(events) {
@@ -56,12 +53,15 @@ function renderEvents(events) {
 
 function filterEvents() {
   const query = document.getElementById("searchInput").value.trim().toLowerCase();
+
   const filtered = allEvents.filter(event =>
     event.name.toLowerCase().includes(query) ||
-    event.date.includes(query)
+    event.date.toLowerCase().includes(query) // Matches parts of the date like "2025-07"
   );
+
   renderEvents(filtered);
 }
+
 
 function resetSearch() {
   document.getElementById("searchInput").value = "";

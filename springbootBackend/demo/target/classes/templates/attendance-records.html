@@ -31,23 +31,30 @@
               Home / <span class="current-page">View Attendance Records</span>
             </div>
           </div>
-          <div class="filters-section mb-4 d-flex flex-wrap justify-content-between align-items-center">
             <div class="search-bar">
               <input type="text" class="form-control" id="searchInput" placeholder="Search by student name or ID">
             </div>
-            <div class="filters d-flex gap-2 mt-2 mt-md-0">
+            
+          <div class="filters-section mb-4 d-flex flex-wrap justify-content-between align-items-center">
+            <!-- <div class="filters d-flex gap-2 mt-2 mt-md-0"> -->
+              <div class="reset">
               <input type="date" class="form-control" id="dateFilter">
+              
               <select class="form-select" id="eventFilter">
                 <option value="">All Events</option>
                 <!-- Populate dynamically -->
               </select>
+              
               <button class="btn btn-outline-secondary" onclick="resetFilters()">Reset</button>
-              <button class="btn btn-edit" id="editModeBtn" onclick="toggleEditMode()">Edit</button>
+              </div>
+              <div class="edit">
+              <button class="btn btn-edit " id="editModeBtn" onclick="toggleEditMode()">Edit</button>
               <button class="btn btn-danger" id="deleteSelectedBtn" style="display: none;"
                 onclick="deleteSelectedRecords()">
                 Delete Selected
               </button>
-            </div>
+              </div>
+            <!-- </div> -->
           </div>
 
 
@@ -73,10 +80,12 @@
             </table>
           </div>
           <div class="pagination-controls d-flex justify-content-between align-items-center mt-3">
+            <div class="paginationDisplay">
             <div id="paginationInfo">Page 1 of X</div>
             <div class="pagination-buttons">
               <button class="btn btn-sm btn-outline-primary" id="prevBtn" onclick="prevPage()">Previous</button>
               <button class="btn btn-sm btn-outline-primary" id="nextBtn" onclick="nextPage()">Next</button>
+            </div>
             </div>
           </div>
           <!-- 
