@@ -41,6 +41,13 @@
   />
 </div>
 
+<div class="edit-controls d-flex gap-2 mb-3">
+  <button class="deletion-btn" id="editModeBtn" onclick="toggleEditMode()">Select for Deletion</button>
+
+  <button id="deleteSelectedBtn" class="delete-btn" style="display: none;" onclick="deleteSelectedEvents()">Delete Selected</button>
+  <button class="cancel-btn" id="cancelEditBtn" onclick="cancelEditMode()" style="display: none;">Cancel</button>
+</div>
+
                     <div id="upcoming-events-list" class="row">
                         <!-- Events will be inserted here dynamically -->
                     </div>

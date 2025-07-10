@@ -3,12 +3,12 @@ package com.example.demo.Controller;
 import com.example.demo.Model.Event;
 import com.example.demo.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -94,6 +94,14 @@ public List<Event> getEventsByDate(@RequestParam String date) {
 }
 
 
+    // 🔹 Delete Event
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteEvent(@PathVariable Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return ResponseEntity.ok("Deleted");
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
-
 

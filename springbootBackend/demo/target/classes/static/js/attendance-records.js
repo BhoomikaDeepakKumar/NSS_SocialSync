@@ -149,17 +149,7 @@ function deleteSelectedRecords() {
     });
 }
 
-//Edit Column- Hide or Unhide
-let editMode = false;
-function toggleEditMode() {
-  editMode = !editMode;
-  document.querySelectorAll("#attendanceTable td:nth-child(7), #attendanceTable th:nth-child(7)").forEach(cell => {
-    cell.style.display = editMode ? "table-cell" : "none";
-  });
 
-  const deleteBtn = document.getElementById("deleteSelectedBtn");
-  deleteBtn.style.display = editMode ? "inline-block" : "none";
-}
 
 
 function updatePaginationInfo(totalPages) {
@@ -531,34 +521,27 @@ const selectedEvent = events.find(e =>
 // Called on Edit button click
 function toggleEditMode() {
   isEditMode = true;
-  document.querySelector('.edit-checkbox-column').style.display = '';
+  document.querySelectorAll('.edit-checkbox-column').forEach(el => el.style.display = '');
+
   document.getElementById('deleteSelectedBtn').style.display = 'inline-block';
-  
-  // Show Save button
-  if (!document.getElementById('saveEditBtn')) {
-    const saveBtn = document.createElement('button');
-    saveBtn.className = 'btn btn-success';
-    saveBtn.id = 'saveEditBtn';
-    saveBtn.innerText = 'Save';
-    saveBtn.onclick = saveEditMode;
-    document.getElementById('deleteSelectedBtn').parentNode.appendChild(saveBtn);
-  }
+  document.getElementById('cancelEditBtn').style.display = 'inline-block';
+  document.getElementById('editModeBtn').style.display = 'none';
 
-  // Refresh the table with checkboxes
-  renderAttendanceRows();
+  renderAttendanceRows(); // show checkboxes
 }
 
-function saveEditMode() {
+function cancelEditMode() {
   isEditMode = false;
-  document.querySelector('.edit-checkbox-column').style.display = 'none';
+  document.querySelectorAll('.edit-checkbox-column').forEach(el => el.style.display = 'none');
   document.getElementById('deleteSelectedBtn').style.display = 'none';
+  document.getElementById('cancelEditBtn').style.display = 'none';
+  document.getElementById('editModeBtn').style.display = 'inline-block';
 
-  const saveBtn = document.getElementById('saveEditBtn');
-  if (saveBtn) saveBtn.remove();
-
-  // Refresh the table without checkboxes
-  renderAttendanceRows();
+  renderAttendanceRows(); // hide checkboxes
 }
+
+
+
 
 //export all pages
 async function fetchAllFilteredAttendanceData() {

@@ -48,11 +48,13 @@
               <button class="btn btn-outline-secondary" onclick="resetFilters()">Reset</button>
               </div>
               <div class="edit">
-              <button class="btn btn-edit " id="editModeBtn" onclick="toggleEditMode()">Edit</button>
-              <button class="btn btn-danger" id="deleteSelectedBtn" style="display: none;"
+              <button class="deletion-btn " id="editModeBtn" onclick="toggleEditMode()">Select for Deletion</button>
+              <button class="delete-btn" id="deleteSelectedBtn" style="display: none;"
                 onclick="deleteSelectedRecords()">
                 Delete Selected
               </button>
+              <button class="cancel-btn" id="cancelEditBtn" onclick="cancelEditMode()" style="display: none;">Cancel</button>
+
               </div>
             <!-- </div> -->
           </div>
