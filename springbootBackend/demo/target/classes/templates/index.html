@@ -9,6 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Gowun+Dodum&family=Hannari&family=Poppins:wght@400;500;700&family=Nunito:wght@400;700&family=Open+Sans&family=Inter:wght@400;500&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
@@ -18,6 +19,9 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
 
 </head>
 
@@ -37,52 +41,256 @@
             </div>
           </div>
 
-<section class="hero-section">
-  <div class="hero-overlay">
-    <div class="hero-content-left">
-      <img src="/images/nss_logo.png" alt="NSS Logo" class="nss-logo">
-      <h1 class="hero-title">NSS</h1>
-      <p class="hero-description">
-        The National Service Scheme (NSS) is a flagship initiative of the Ministry of Youth Affairs & Sports, Government of India. It aims to cultivate a sense of social responsibility, civic awareness, and community engagement among the youth.
-        <br><br>
-        Open to students of higher secondary schools, colleges, universities, and technical institutions, NSS provides a dynamic platform for young minds to participate in community service, nation-building activities, and developmental programs driven by both government and grassroots efforts.
-        <br><br>
-        Rooted in the motto <span class="highlight-orange">"NOT ME BUT YOU"</span>, the scheme inspires selfless action and fosters leadership, empathy, and a commitment to creating meaningful change in society.
-      </p>
-    </div>
+          <section class="hero-section">
+            <div class="hero-overlay">
 
-    <div class="hero-content-right">
-      <div class="hero-box">
-        <h3><span class="highlight-orange">WELCOME TO NSS SOCIALSYNC</h3></span>
-        <p>Manage events, track attendance,<br>and celebrate the spirit of service...</p>
-      </div>
+              <div class="hero-content slider-container">
+                <div class="slider">
+                  <!-- Slide 1 -->
+                  <div class="slide active">
+<div class="hero-content">
+                    <h3 class="hero-title-2"><span>WELCOME TO NSS SOCIALSYNC</span></h3>
+                    <p>Manage events, track attendance, and celebrate the spirit of service...</p>
+                    </div>
+                    <div class="slide-button-container">
+                      <button class="view-reports-btn" onclick="scrollToReports()">View Reports</button>
+                    </div>
+                  </div>
 
-      <div class="hero-box">
-        <h3><span class="highlight-orange">NSS:</span> IDEALS THAT INSPIRE</h3>
-        <ul class="ideals-list">
-          <li>Community Upliftment</li>
-          <li>Social Awareness</li>
-          <li>National Integration</li>
-          <li>Environmental Action</li>
-          <li>Empathetic Leadership</li>
-          <li>Civic Engagement</li>
-        </ul>
-      
 
-      </div>
-        <button class="view-memories-btn">View Past Memories</button>
-    </div>
-  </div>
-</section>
+                  
+
+                  
+                  
+
+
+                  <!-- Slide 2 -->
+                  <div class="slide">
+                      <div class="hero-content">
+                    <img src="/images/nss_logo.png" alt="NSS Logo" class="nss-logo">
+                    
+                    <h1 class="hero-title">National Service Scheme</h1>
+                    </div>
+                    <div class="slide-button-container">
+                      <button class="view-memories-btn" onclick="scrollToCanonEvents()">View Past Memories</button>
+                    </div>
+
+                </div>
+</div>
+
+              </div>
+              <!-- Arrows -->
+              <button class="slider-arrow prev" onclick="prevSlide()">❮</button>
+              <button class="slider-arrow next" onclick="nextSlide()">❯</button>
+
+
+            </div>
+            <div class="slider-dots">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+          </section>
+          <!-- Dots -->
+
+
+          <section class="canon-events-section">
+            
+            <p class="text-center mb-4"></p>
+
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-3 g-4" data-masonry='{"percentPosition": true }'>
+
+                
+                <!-- Event Cards -->
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Swachh Bharat Abhiyan</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Blood Donation Camp</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Tree Plantation Drive</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Independence Day</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">NSS Camp</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Health Awareness Camp</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">International Yoga Day</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Road Safety Campaign</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="canon-card" style="background-image: url('/images/swachh.jpg');">
+                    <div class="event-title-box">
+                      <h5 class="event-title">Voter Awareness Drive</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+            </div>
+          </section>
+
+
 
 
 <!-- 
-          <h3 class="section-title">EVENT CALENDER</h3>
-          <div class="calendar-section" id="calendar-wrapper">
-            <div id="eventCalendar"></div>
-          </div>
+          <section class="nss-progress-report container mt-5">
+            <h3 class="section-title text-center">Reports</h3>
 
-          <div class="stats-section">
+            <div class="row row-cols-1 row-cols-md-2 g-4"> -->
+
+              <!-- Monthly Attendance Summary -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Monthly Attendance Summary</h5>
+                  <canvas id="attendanceSummaryChart" height="150"></canvas>
+                </div>
+              </div> -->
+
+              <!-- Event Milestones -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Event Milestones</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                      Swachh Bharat Abhiyan <span class="badge bg-success">Completed</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      Blood Donation Camp <span class="badge bg-warning text-dark">Ongoing</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      Voter Awareness Drive <span class="badge bg-secondary">Upcoming</span>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+
+              <!-- Performance Metrics -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Volunteer Performance Metrics</h5>
+                  <canvas id="performanceChart" height="150"></canvas>
+                </div>
+              </div> -->
+
+              <!-- Volunteer Efficiency -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Volunteer Efficiency</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">Cia R. <span>82%</span></li>
+                    <li class="list-group-item d-flex justify-content-between">Howard O. <span>75%</span></li>
+                    <li class="list-group-item d-flex justify-content-between">Teddy Y. <span>89%</span></li>
+                    <li class="list-group-item d-flex justify-content-between">Matt Z. <span>64%</span></li>
+                  </ul>
+                </div>
+              </div> -->
+
+              <!-- Engagement Channels -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Volunteer Engagement Channels</h5>
+                  <canvas id="engagementPieChart" height="150"></canvas>
+                </div>
+              </div> -->
+
+              <!-- Resource Utilization -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Resource Utilization</h5>
+                  <canvas id="resourceChart" height="150"></canvas>
+                </div>
+              </div> -->
+
+              <!-- Volunteer Engagement -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Volunteer Engagement Levels</h5>
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <div>Cia R.: 95%</div>
+                    <div>Howard O.: 72%</div>
+                    <div>Teddy Y.: 88%</div>
+                    <div>Matt Z.: 66%</div>
+                    <div>Aaron L.: 90%</div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Timeline Comparison -->
+              <!-- <div class="col">
+                <div class="card h-100 p-3">
+                  <h5 class="card-title">Event Timeline Tracking</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item">Swachh Bharat Abhiyan — <strong>On Time</strong></li>
+                    <li class="list-group-item">Blood Donation Camp — <strong>Delayed by 2 days</strong></li>
+                    <li class="list-group-item">Tree Plantation Drive — <strong>Rescheduled</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="calendar-section" id="calendar-wrapper">
+
+              <h3 class="calendar-title">EVENT CALENDAR</h3>
+              <div id="eventCalendar"></div>
+            </div>
+
+            <!-- <div class="stats-section">
             <div class="stats-grid">
               <div class="stat-card">
                 <div class="stat-content">
@@ -93,6 +301,7 @@
                 </div>
               </div>
 
+              
               <div class="stat-card">
                 <div class="stat-content">
                   <h4 class="stat-title">Average Attendance</h4>
@@ -108,8 +317,11 @@
                     <div class="stat-number" id="average-attendance">100</div>
                   </div>
                 </div>
-              </div> -->
-        </section> 
+              </div>
+         -->
+
+          </section>
+        </section>
       </div>
     </div>
   </main>

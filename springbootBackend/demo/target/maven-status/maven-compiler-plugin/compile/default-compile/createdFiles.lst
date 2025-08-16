@@ -1,12 +1,16 @@
+com\example\demo\Controller\MessageController.class
 com\example\demo\dto\PieChartDTO.class
 com\example\demo\Model\Event.class
 com\example\demo\dto\AttendanceReportDTO.class
+com\example\demo\Model\Message.class
+com\example\demo\Controller\TestController.class
 com\example\demo\Controller\PageController.class
 com\example\demo\Controller\RegistrationController.class
 com\example\demo\Model\Attendance.class
 com\example\demo\dto\LeaderboardDTO.class
 com\example\demo\Controller\DashboardController.class
 com\example\demo\Controller\VerificationController.class
+com\example\demo\Repository\MessageRepository.class
 com\example\demo\Controller\ContentController.class
 com\example\demo\Repository\EventRepository.class
 com\example\demo\Controller\AttendanceReportController.class

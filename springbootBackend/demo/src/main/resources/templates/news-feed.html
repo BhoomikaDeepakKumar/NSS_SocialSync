@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSS SocialSync - index</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/news-feed.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Gowun+Dodum:wght@400&family=Hannari:wght@400&family=Poppins:wght@400;500;700&family=Nunito:wght@400;700&family=Open+Sans:wght@400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main class="admin-panel-page">
+    <div class="admin-panel">
+      <div id="header-container"></div>
+
+      <div class="main-container">
+        <div id="sidebar-container"></div>
+
+        <section class="content">
+          <div class="breadcrumb-section">
+            <h2 class="page-title">NEWS FEED</h2>
+            <div class="breadcrumb">
+              Home / <span class="current-page">News Feed</span>
+            </div>
+          </div>
+
+
+
+          <div class="broadcast-section admin-only">
+  <h3>Create Announcement</h3>
+  <form id="broadcastForm">
+  <input type="text" id="announcementTitle" placeholder="Enter title" required />
+
+  <textarea id="announcementContent" placeholder="Write your message..." required></textarea>
+  
+  <label for="eventLink">Link to Event (optional):</label>
+  <select id="eventLink">
+    <option value="">-- None --</option>
+    <option value="1">Tree Plantation Drive - Aug 20, 2025</option>
+    <option value="2">Cleanliness Drive - Sep 1, 2025</option>
+  </select>
+
+  <!-- ✅ Wrap button here -->
+  <div class="form-actions">
+    <button type="submit">Publish</button>
+  </div>
+</form>
+
+</div>
+
+<!-- News Feed Section -->
+<div class="news-feed" id="newsFeed">
+  
+  </div>
+
+
+          
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="/js/news-feed.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

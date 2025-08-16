@@ -94,6 +94,15 @@
     <optional>true</optional>
 </dependency>
 
+
+<!-- Swagger dependencies -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.0.4</version>
+</dependency>
+
+
 	</dependencies>
 
 	<build>

@@ -166,7 +166,7 @@ if (selectedYear === "current") {
         labels: ['Present', 'Absent'],
         datasets: [{
           data: [presentCount, absentCount],
-          backgroundColor: ['#23B5D3', '#A2AEBB'],
+          backgroundColor: ['#9fe3c7', '#A2AEBB'],
         }]
       },
       options: {
@@ -217,7 +217,7 @@ async function drawMonthlyLineChart() {
       label: "Number of Attendees",
       data: data.map(e => e.attendeeCount),
       fill: false,
-      borderColor: "#7353BA", // Line color
+      borderColor: "#9fe3c7", // Line color
       tension: 0.3
     }]
   },
@@ -332,18 +332,3 @@ function populateAcademicYearOptions() {
   }
 }
 
-
-
-// document.getElementById("academicYearSelect").addEventListener("change", () => {
-//   const val = document.getElementById("academicYearSelect").value;
-//   if (val === "current") {
-//     const now = new Date();
-//     const academicStartYear = now.getMonth() + 1 < 7 ? now.getFullYear() - 1 : now.getFullYear();
-//     const start = `${academicStartYear}-07-01`;
-//     const end = now.toISOString().split("T")[0];
-//     document.getElementById("academicYearInfo").textContent = `Showing data from ${start} to ${end}`;
-//   } else {
-//     const [startYear, endYear] = val.split("-");
-//     document.getElementById("academicYearInfo").textContent = `Showing data from ${startYear}-07-01 to ${endYear}-06-30`;
-//   }
-// });

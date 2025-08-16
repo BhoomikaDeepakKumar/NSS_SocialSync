@@ -203,3 +203,119 @@ observer.observe(calendarEl, {
         showEventDetails,
         updatePageContent
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+  // Attendance Chart
+  new Chart(document.getElementById("attendanceSummaryChart"), {
+    type: "bar",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+      datasets: [{
+        label: "Volunteers Attended",
+        data: [50, 65, 70, 80, 95],
+        backgroundColor: "#FEE9E1"
+      }]
+    }
+  });
+
+  // Performance Chart
+  new Chart(document.getElementById("performanceChart"), {
+    type: "bar",
+    data: {
+      labels: ["Participation", "Punctuality", "Task Completion"],
+      datasets: [{
+        label: "Actual",
+        data: [75, 82, 68],
+        backgroundColor: "#9c786d"
+      }, {
+        label: "Target",
+        data: [90, 90, 90],
+        backgroundColor: "#FEE9E1"
+      }]
+    }
+  });
+
+  // Engagement Pie Chart
+  new Chart(document.getElementById("engagementPieChart"), {
+    type: "pie",
+    data: {
+      labels: ["Social Media", "Word of Mouth", "College Drive"],
+      datasets: [{
+        data: [33.3, 33.3, 33.3],
+        backgroundColor: ["#9c786d", "#F7BFA1", "#FEE9E1"]
+      }]
+    }
+  });
+
+  // Resource Chart
+  new Chart(document.getElementById("resourceChart"), {
+    type: "bar",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+      datasets: [{
+        label: "Resources Used (₹)",
+        data: [2000, 3200, 2700, 4100, 5000],
+        backgroundColor: "#F7BFA1"
+      }]
+    }
+  });
+
+
+
+  
+});
+
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+    dots[i].classList.toggle("active", i === index);
+  });
+  currentSlide = index;
+}
+
+function nextSlide() {
+  let nextIndex = (currentSlide + 1) % slides.length;
+  showSlide(nextIndex);
+}
+
+function prevSlide() {
+  let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(prevIndex);
+}
+
+function goToSlide(index) {
+  showSlide(index);
+}
+
+// Scroll functions
+function scrollToCanonEvents() {
+  document.querySelector(".canon-events-section").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToReports() {
+  document.querySelector(".nss-progress-report").scrollIntoView({ behavior: "smooth" });
+}
+
+// Optional: auto-switch slides
+// setInterval(nextSlide, 5000);

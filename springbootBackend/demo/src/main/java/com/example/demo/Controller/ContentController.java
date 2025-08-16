@@ -27,6 +27,10 @@
             return "profile";
         }
 
+        @GetMapping("/news-feed")
+        public String newsFeed() {
+            return "news-feed";
+        }
         @GetMapping("/add-event")
         public String addEvent() {
             return "add-event";

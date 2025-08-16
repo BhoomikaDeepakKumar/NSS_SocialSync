@@ -20,9 +20,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @EnableWebSecurity
 public class SecurityConfig {
-  
+
     private final MyAppUserService appUserService;
-    
+
     @Bean
     public UserDetailsService userDetailsService() {
         return appUserService;
@@ -44,25 +44,30 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-            .csrf(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                    "/req/**",         // login, signup routes
-                    "/css/**",         // all CSS
-                    "/js/**",          // all JS
-                    "/images/**",      // if you have any images
-                    "/signup.html",    // optional, if you're serving static HTML pages
-                    "/login.html",
-                    "/api/**"
-                ).permitAll()
-                .anyRequest().authenticated()
-            )
-            .formLogin(form -> form
-                .loginPage("/req/login")
-                .defaultSuccessUrl("/index", true)
-                .permitAll()
-            )
-            .logout(logout -> logout.permitAll())
-            .build();
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(
+                                "/req/**", // login, signup routes
+                                "/css/**", // all CSS
+                                "/js/**", // all JS
+                                "/images/**", // if you have any images
+                                "/signup.html", // optional, if you're serving static HTML pages
+                                "/login.html",
+
+                               
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+
+                                 "/test",
+
+                                "/api/**")
+                        .permitAll()
+                        .anyRequest().authenticated())
+                .formLogin(form -> form
+                        .loginPage("/req/login")
+                        .defaultSuccessUrl("/index", true)
+                        .permitAll())
+                .logout(logout -> logout.permitAll())
+                .build();
     }
 }
