@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/register.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Julius+Sans+One&family=Jura:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <script src="/js/login.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <header class="header">
+      <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+    </header>
+    <h1 class="title">LOGIN</h1>
+    <div class="dialog-row">
+      <label th:if="${param.error}" th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"
+        class="text-center redText"></label>
+    </div>
+    <section class="container">
+      <form action="/req/login" method="post" class="form">
+        <label for="email" class="form-label">Username/Email</label>
+        <input name="username" type="name" id="username" class="form-input" placeholder="Enter your username/email"
+          required />
+        <label for="password" class="form-label">Password</label>
+        <input name="password" type="password" id="password" class="form-input" placeholder="Enter your password"
+          required />
+        <div class="remember-container">
+          <input type="checkbox" id="remember" class="remember-checkbox" />
+          <label for="remember" class="remember-label">Remember Me</label>
+        </div>
+        <button type="submit" class="button">Sign In</button>
+      </form>
+      <div class="login-links">
+        <a href="/forgot-password" class="forgot-password-link">Forgot Password?</a>
+        <p class="register-prompt">
+          <span class="register-text">Don't have an account?</span>
+          <a href="/req/signup" class="register-link">Register here</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

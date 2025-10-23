@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Form</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="/css/signup.css">
+  <link rel="stylesheet" href="/css/register.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jura:wght@700&family=Roboto&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="header">
+      <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+    </header>
+    <h1 class="title">COMPLETE YOUR PROFILE</h1>
+    <section class="container">
+      <form class="form" id="registrationForm">
+
+        <!-- Email (readonly, fetched after signup) -->
+        <label class="form-label" for="email">Email</label>
+        <input type="email" class="form-input" id="email" name="email"  value="new@gmail.com" readonly/>
+
+        <label class="form-label" for="fullName">Full Name</label>
+        <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Enter Full Name" required />
+
+   <!-- Volunteer ID is auto-generated in backend -->
+         <label class="form-label" for="volunteerId">Volunteer ID</label>
+        <input type="text" class="form-input" id="volunteerId" name="volunteerId" readonly placeholder="Will be auto-generated" required />
+
+         <label class="form-label" for="course">Course</label>
+        <input type="text" class="form-input" id="course" name="course" placeholder="Enter Course" required />
+
+         <label class="form-label" for="semester">Semester</label>
+        <input type="number" class="form-input" id="semester" name="semester" min="1" placeholder="Enter Semester" required />
+
+         <label class="form-label" for="contact">Contact</label>
+        <input type="text" class="form-input" id="contact" name="contact" placeholder="Enter Contact Number" required />
+
+        
+
+    
+        <!-- Role Dropdown -->
+<label class="form-label" for="role">Role</label>
+<select class="form-input" id="role" name="role" required>
+  <option value="Volunteer" selected>Volunteer</option>
+  <option value="Mentor">Mentor</option>
+  <option value="Core">Core</option>
+  <option value="Faculty">Faculty</option>
+</select>
+        <button type="submit" class="button">Submit</button>
+       
+      </form>
+    </section>
+  </main>
+
+
+        
+    
+  
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+
+      const data = {
+        fullName: document.getElementById("fullName").value,
+        course: document.getElementById("course").value,
+        semester: document.getElementById("semester").value,
+        contact: document.getElementById("contact").value,
+        role: "Volunteer"
+      };
+
+      const response = await fetch(`/api/users/complete-profile/${email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        document.getElementById("volunteerId").value = result.volunteerId; // show generated ID
+        alert("Profile completed successfully! Your Volunteer ID: " + result.volunteerId);
+        window.location.href = "/index"; // redirect to index page
+      } else {
+        alert("Error completing profile.");
+      }
+    });
+  </script>
+</body>
+</html>

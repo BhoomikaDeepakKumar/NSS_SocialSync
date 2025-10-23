@@ -1,0 +1,254 @@
+/* Delete Button */
+#deleteSelectedBtn {
+  white-space: nowrap;
+}
+
+
+.btn-danger {
+     --bs-btn-bg: #ed1d0e !important;
+ --bs-btn-border-color: #ed1d0e !important;
+ --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #e8a9a4 !important;
+    --bs-btn-hover-border-color: #e8a9a4 !important;
+     --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #e8a9a4 !important;
+    --bs-btn-active-border-color: #e8a9a4 !important;
+}
+
+/* Edit Button */
+
+
+.btn-edit {
+    color: white !important;
+    background-color: #405E77 !important;
+    border-color: #405E77 !important;
+}
+
+/* Keep consistency across states */
+.btn-edit:hover,
+.btn-edit:active,
+.btn-edit:focus {
+    background-color: #1a364e !important;
+    color: white !important;
+    border-color: #1a364e !important;
+}
+
+/*Save Button*/
+.btn-success {
+    --bs-btn-color: #fff; /* text color remains white */
+    --bs-btn-bg: #00ff00 !important;
+    --bs-btn-border-color: #00ff00  !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #a5ffa5 !important;
+    --bs-btn-hover-border-color: #a5ffa5 !important;
+    --bs-btn-focus-shadow-rgb: 75, 201, 181 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #a5ffa5 !important;
+    --bs-btn-active-border-color: #a5ffa5 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+}
+
+/*Export csv Button*/
+.btn-export {
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #2F195F !important;
+    --bs-btn-border-color: #2F195F  !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #5a2fc6 !important;
+    --bs-btn-hover-border-color: #5a2fc6 !important;
+    --bs-btn-focus-shadow-rgb: 75, 201, 181 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #5a2fc6 !important;
+    --bs-btn-active-border-color: #5a2fc6 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+
+}
+/* Export Button */
+.btn-pdf {
+  background-color: #7353BA !important; /* soft coral red */
+  color: white !important;
+  border-color: #7353BA !important;
+}
+
+.btn-pdf:hover,
+.btn-pdf:focus,
+.btn-pdf:active {
+  background-color: #9592d1 !important;
+  border-color: #9592d1 !important;
+  color: white !important;
+}
+
+/* Download Template */
+.btn-outline-primary {
+    --bs-btn-color: #03045E !important;
+    --bs-btn-border-color: #03045E !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #03045E !important;
+    --bs-btn-hover-border-color: #03045E !important;
+    --bs-btn-focus-shadow-rgb: 3, 4, 94 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #03045E !important;
+    --bs-btn-active-border-color: #03045E !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #03045E !important;
+    --bs-btn-disabled-bg: transparent !important;
+    --bs-btn-disabled-border-color: #03045E !important;
+    --bs-gradient: none !important;
+}
+
+.btn-outline-info {
+    --bs-btn-color: #0dcaf0 !important;
+    --bs-btn-border-color: #0dcaf0 !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #0dcaf0 !important;
+    --bs-btn-hover-border-color: #0dcaf0 !important;
+    --bs-btn-focus-shadow-rgb: 13, 202, 240 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #0dcaf0 !important;
+    --bs-btn-active-border-color: #0dcaf0 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #0dcaf0 !important;
+    --bs-btn-disabled-bg: transparent !important;
+    --bs-btn-disabled-border-color: #0dcaf0 !important;
+    --bs-gradient: none !important;
+}
+
+/* Bulk Upload Heading */
+h5.custom-heading {
+    font-size: 1.5rem !important;       /* Make it slightly larger */
+    color: #4c0082 !important;          /* Deep purple shade */
+    font-weight: 600 !important;        /* Slightly bolder than normal */
+    text-transform: uppercase !important; /* Optional: All caps */
+}
+
+
+/* Present */
+#attendanceTable .bg-success {
+  background-color: white !important; /* Replace with your preferred green */
+  color: black !important; /* Optional: improves contrast */
+}
+
+/* Table colour */
+#attendanceTable.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type:#405E77!important;
+  background-color: #405E77!important;
+  color: #fff!important;
+}
+#attendanceTable.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: #405E77; /* subtle white-beige */
+  color: #fff!important;
+}
+/* Optional: consistent hover effect */
+#attendanceTable.table-striped tr:hover td {
+  cursor: pointer;
+}
+thead th {
+  background-color: #000000!important;
+}
+
+.paginationDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.search-bar{
+  width:100% ;
+  margin-bottom: 1rem;
+}
+.reset{
+  display: flex;
+  align-self: start;
+  gap:1rem;
+}
+
+/* Shrink inputs slightly on mobile */
+@media (max-width: 768px) {
+  .filters .filter-input {
+    flex: 1 1 40%;
+    min-width: 130px;
+  }
+
+  .filters button {
+    flex: 1 1 100%;
+  }
+
+  .btn-edit {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .edit-section, .calendar-section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .your-main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important; /* Remove unnecessary space */
+  }
+
+  .fc {
+    margin-top: 0 !important;
+  }
+}
+
+
+
+[contenteditable="true"] {
+  border-bottom: 1px dashed #ccc;
+  padding: 2px;
+}
+
+.deletion-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.deletion-btn:hover{
+  background-color: #e8a9a4 !important;
+    color: white !important;
+}
+.delete-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover{
+ background-color: #e8a9a4;
+}
+
+.cancel-btn {
+  background-color: #405E77;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+.cancel-btn:hover {
+ background-color: #1a364e;
+}
+
+.edit-controls {
+  display: flex;
+  justify-content: flex-end;  /* Push to right */
+  gap: 10px;
+  margin-top: 1rem;
+}

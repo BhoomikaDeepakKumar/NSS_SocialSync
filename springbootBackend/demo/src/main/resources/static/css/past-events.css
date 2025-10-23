@@ -1,0 +1,132 @@
+/* Container spacing */
+#past-events-container {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Event card styles */
+.card {
+  border-radius: 1rem;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card content spacing */
+.card-body {
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #AFCBFF !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Card text */
+.card-text {
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+/* View Details button */
+.card .btn-primary {
+  background-color: #405E77;
+  border: none;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #1a364e;
+}
+
+.btn-primary {
+  --bs-btn-active-bg: #405E77 !important;
+  --bs-btn-active-border-color: #405E77 !important;
+}
+
+
+.search-bar {
+  width: 100vw; /* Viewport width */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+
+}
+
+
+.search-bar input {
+  max-width: 100% !important;
+    border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.search-bar{
+  width: 100%;
+}
+
+
+
+[contenteditable="true"] {
+  border-bottom: 1px dashed #ccc;
+  padding: 2px;
+}
+
+.deletion-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.deletion-btn:hover{
+  background-color: #e8a9a4 !important;
+    color: white !important;
+}
+.delete-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover{
+ background-color: #e8a9a4;
+}
+
+.cancel-btn {
+  background-color: #405E77;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+.cancel-btn:hover {
+ background-color: #1a364e;
+}
+
+.edit-controls {
+  display: flex;
+  justify-content: flex-end;  /* Push to right */
+  gap: 10px;
+  margin-top: 1rem;
+}
+

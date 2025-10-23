@@ -1,0 +1,161 @@
+.event-details {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-body {
+  color: #555 !important;
+  font-family: 'Inter', sans-serif !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 8px !important;
+}
+
+.card-title {
+  color: #AFCBFF !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.25rem !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.view-details-btn {
+  background-color: #405E77;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-top: 0.8rem !important;
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background-color: #1a364e;
+}
+
+
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px !important;
+  margin-top: 3rem !important;
+}
+
+.event-card {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+#upcoming-events-list {
+  margin-top: 3.45rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-text {
+  margin-bottom: 0.3rem !important;
+  color: #555;
+  font-size: 1rem;
+}
+
+
+.search-bar {
+  width: 100vw; /* Viewport width */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+
+}
+
+
+.search-bar input {
+  max-width: 100% !important;
+    border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+.search-bar{
+  width:100% !important;
+}
+
+
+.search-bar button {
+  border-radius: 0.5rem;
+}
+
+.search-bar button.btn-primary {
+  background-color: #405E77;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button.btn-primary:hover {
+  background-color: #1a364e;
+}
+
+
+
+[contenteditable="true"] {
+  border-bottom: 1px dashed #ccc;
+  padding: 2px;
+}
+
+.deletion-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.deletion-btn:hover{
+  background-color: #e8a9a4 !important;
+    color: white !important;
+}
+.delete-btn {
+  background-color: #ed1d0e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover{
+ background-color: #e8a9a4;
+}
+
+.cancel-btn {
+  background-color: #405E77;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+.cancel-btn:hover {
+ background-color: #1a364e;
+}
+
+.edit-controls {
+  display: flex;
+  justify-content: flex-end;  /* Push to right */
+  gap: 10px;
+  margin-top: 1rem;
+}

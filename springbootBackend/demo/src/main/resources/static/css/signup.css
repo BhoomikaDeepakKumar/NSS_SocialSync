@@ -1,0 +1,50 @@
+  .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .password-container .form-input {
+    width: 100%;
+    padding-right: 40px;
+    margin-bottom: 0;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2f4a55;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .existing-user-container {
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+
+  .login-text {
+    font-family: "Jura", sans-serif;
+    font-size: 20px;
+    color: #2f4a55;
+    margin: 0;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  .login-link {
+    color: #2f897d;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .login-link:hover {
+    text-decoration: underline;
+  }

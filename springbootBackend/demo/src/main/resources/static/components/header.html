@@ -1,0 +1,41 @@
+<header class="header">
+  <img src="/images/logo.jpeg" alt="NSS SocialSync Logo" class="logo" />
+
+  <div class="header-right">
+    <!-- Eclipse container -->
+    <div class="header-eclipse">
+
+      <!-- Notifications -->
+      <div class="notification-container">
+        <a href="/news-feed" class="notification-btn">
+          <img src="/images/notification-icon.png" alt="Notifications" />
+          <span class="notification-badge">3</span>
+        </a>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Profile -->
+      <div class="profile-dropdown-container">
+        <button class="profile-icon" id="profileIcon">
+          <img src="/images/profile-icon.png" alt="Profile Icon" />
+        </button>
+        <!-- Profile Dropdown in Header -->
+<div class="profile-dropdown" id="profileDropdown">
+  <p>Hi, <span id="userNameDropdown">Bhoomika</span></p>
+
+  <!-- Logout Form -->
+  <form action="/logout" method="post" style="margin: 0;">
+    <button type="submit" class="logout-btn">
+      <img src="/images/logout-icon.png" alt="Logout" /> Logout
+    </button>
+  </form>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+

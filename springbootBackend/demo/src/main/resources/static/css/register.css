@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        "Roboto",
+        -apple-system,
+        Helvetica,
+        sans-serif;
+    font-weight: 400;
+}
+
+.page {
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    padding-bottom: 53px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.title {
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 2rem;
+    font-family:
+        "Julius Sans One",
+        -apple-system,
+        Helvetica,
+        sans-serif;
+    text-align: center;
+    font-weight: 600;
+}
+
+.container {
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(47, 137, 125, 1);
+    display: flex;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: "Jura", -apple-system, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 1.2rem;
+    color: rgba(47, 74, 85, 1);
+    font-weight: 700;
+}
+
+.form-label {
+    align-self: flex-start;
+    margin-bottom: 10px;
+
+}
+
+.form-input {
+    border-radius: 10px;
+    color: rgba(47, 74, 85, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(47, 137, 125, 1);
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-weight: 700;
+    font-family:
+        "Jura",
+        -apple-system,
+        Helvetica,
+        sans-serif;
+    font-size: 18px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fdd05b;
+    border-radius: 5px;
+    background-color: rgba(21, 198, 234, 1);
+    align-self: center;
+    margin-top: 20px;
+    width: 130px;
+    height: 40px;
+    padding: 14px 18px;
+    font-size: 20px;
+    color: rgba(23, 39, 47, 1);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-family:
+        "Jura",
+        -apple-system,
+        Helvetica,
+        sans-serif;
+    font-weight: 700;
+}
+
+.button:hover {
+    opacity: 0.8;
+}

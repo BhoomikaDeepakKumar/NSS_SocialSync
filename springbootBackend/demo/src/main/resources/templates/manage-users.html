@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSS SocialSync - index</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/manage-users.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Gowun+Dodum:wght@400&family=Hannari:wght@400&family=Poppins:wght@400;500;700&family=Nunito:wght@400;700&family=Open+Sans:wght@400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main class="admin-panel-page">
+    <div class="admin-panel">
+      <div id="header-container"></div>
+
+      <div class="main-container">
+        <div id="sidebar-container"></div>
+
+        <section class="content">
+          <div class="breadcrumb-section">
+            <h2 class="page-title">MANAGE USERS</h2>
+            <div class="breadcrumb">
+              Home / <span class="current-page">Manage Users</span>
+            </div>
+          </div>
+
+
+
+           <!-- 🔍 Search -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search by username or email..." />
+    
+  </div>
+
+  <!-- 📋 Users Table -->
+  <div class="users-table-container">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Current Role</th>
+          <th>Update Role</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody">
+        <!-- Example Row -->
+        <!-- <tr>
+          <td>john_doe</td>
+          <td>john@example.com</td>
+          <td>ROLE_USER</td>
+          <td>
+            <select class="role-dropdown">
+              <option value="ROLE_USER">User</option>
+              <option value="ROLE_MENTOR">Mentor</option>
+              <option value="ROLE_CORE">Core</option>
+              <option value="ROLE_ADMIN">Admin</option>
+            </select>
+          </td>
+          <td><button class="update-btn">Update</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</section>
+          
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="/js/manage-users.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

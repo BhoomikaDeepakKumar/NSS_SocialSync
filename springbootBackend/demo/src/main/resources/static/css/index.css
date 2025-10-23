@@ -1,0 +1,977 @@
+.section-title {
+  border-radius: 10px;
+  background-color: #FEE9E1;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  margin-top: 40px;
+  width: 343px;
+  max-width: 100%;
+  padding: 3px 40px;
+  font-family: Hannari, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 30px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #62372a;
+  display: flex;
+text-align: center;
+}
+
+#calendar-wrapper {
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+#eventCalendar,
+.fc,
+.fc-scrollgrid,
+.fc-scrollgrid table,
+.fc-daygrid-body,
+.fc-view-harness,
+.fc-view-harness-active,
+.fc-daygrid {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+
+
+/* Remove outer calendar border */
+.fc-scrollgrid,
+.fc-scrollgrid table {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.fc-daygrid-day {
+  border: none
+}
+
+.fc-daygrid-day-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fc-toolbar-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #9c786d;
+}
+
+
+
+#eventCalendar {
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+#eventCalendar {
+  min-height: 500px;
+
+  min-width: 630px;
+
+
+}
+
+.fc .fc-daygrid-day-frame {
+    min-height: 0%;
+    position: relative;
+}
+
+/* Calendar text improvements */
+.fc {
+  font-size: 14px;
+  color: #333;
+}
+
+.fc-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.fc-button:hover {
+  background-color: #0056b3;
+}
+
+.fc-daygrid-event {
+  background-color: #ffc107;
+  border: none;
+  color: #333;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+
+/* Remove underline and set background for weekday headers */
+.fc .fc-col-header-cell-cushion {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hide calendar grid lines */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none !important;
+}
+
+
+/* Optional: set background color for the day name row */
+.fc-col-header {
+  background-color: white !important;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the date numbers inside calendar cells */
+.fc-daygrid-day-number {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 4px;
+
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/* Optional: hover effect for better interactivity */
+.fc-daygrid-day-number:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Compact event block style */
+.fc-event {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin-bottom: 2px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Prevent events from stacking block-style */
+.fc-daygrid-event {
+  display: inline-block;
+}
+
+/* Optional: custom styles for each event status */
+.fc-event.event-ongoing {
+  background-color: #FF6F00 !important;
+  border: none;
+  color: black;
+}
+
+.fc-event.event-upcoming {
+  background-color: #00B0FF !important;
+  border: none;
+  color: white;
+}
+
+.fc-event.event-completed {
+  background-color: #6c757d !important;
+  border: none;
+  color: white;
+}
+
+.stats-section {
+  margin-top: 55px;
+  width: 100%;
+}
+
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stat-card {
+  align-items: stretch;
+  line-height: normal;
+  width: 25%;
+  margin-left: 0px;
+
+  flex: 1 1 calc(25% - 15px);
+  /* 4 cards in a row with spacing */
+  display: flex;
+  flex-direction: column;
+  cursor:pointer;
+}
+
+.stat-card>div {
+  padding: 0;
+  /* Reset any conflicting padding */
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* or start */
+  justify-content: center;
+  /* vertically center if needed */
+}
+
+
+.stat-card>div {
+  border-radius: 10px;
+  /* background-color: rgba(253, 208, 91, 0.34); */
+  background-color: #405E77;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  padding: 3px 14px 25px;
+  flex-direction: column;
+  align-items: start;
+}
+
+
+
+.stat-title {
+  margin-left: 15px;
+  padding-top: 20px;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  /* color: rgba(39, 205, 165, 1); */
+  color: white;
+
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+.stat-header {
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  color: rgb(73, 77, 76);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+
+.stat-header .stat-title {
+  align-self: end;
+  margin-right: -185px;
+  padding: 20px 92px 15px 0;
+}
+
+
+
+.stat-content {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+  font-weight: 700;
+}
+
+
+.stat-details {
+  align-self: start;
+  margin-top: 6px;
+  padding: 0 4px 1px 16px;
+}
+
+.stat-number {
+  color: rgb(26, 252, 199);
+  font-size: 28px;
+  font-family: Nunito, -apple-system, Roboto, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+
+.stat-number-large {
+  margin: auto 0;
+  padding: 0 4px 1px 16px;
+  color: rgba(39, 205, 165, 1);
+  font-size: 28px;
+  font-family: Nunito, -apple-system, Roboto, Helvetica, sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.stat-change {
+  color: rgba(25, 135, 84, 1);
+  font-size: 14px;
+  font-family: Open Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.change-percent {
+  color: rgba(1, 41, 112, 1);
+}
+
+.change-text {
+  font-weight: 400;
+  color: rgba(108, 117, 125, 1);
+}
+
+
+#attendanceChart {
+  background: white;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  padding: 1rem;
+
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  height: 250px !important;
+
+}
+
+
+
+
+.admin-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  /* padding: 16px; */
+
+  border-radius: 5px;
+  background-color: transparent;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
+  /* margin-top: 25px;
+  margin-left: 40px; */
+}
+
+.admin-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  width:100%;
+  height: 100%;
+}
+
+
+
+
+.admin-item.active,
+.admin-item.active .admin-text {
+  color: white;
+  font-weight: bold;
+}
+
+.admin-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.admin-text {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.fc-daygrid-event {
+  background-color: #F7BFA1 !important;
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.fc-daygrid-event-dot {
+  border: calc(var(--fc-daygrid-event-dot-width) / 2) solid #c15114; /* new color */
+  border-radius: calc(var(--fc-daygrid-event-dot-width) / 2);
+  box-sizing: content-box;
+  height: 0px;
+  margin: 0px 4px;
+  width: 0px;
+}
+
+.fc .fc-timegrid-axis-cushion {
+    flex-shrink: 0;
+    max-width: 60px;
+    display: none;
+}
+
+.fc .fc-timegrid .fc-daygrid-body {
+    z-index: 2;
+     display: none;
+}
+
+a {
+  color: #F7BFA1!important;
+  text-decoration: none;
+}
+a:hover {
+  /* color: #D1FAFF!important;
+  text-decoration: none;  */
+  cursor: pointer;
+}
+
+:root {
+  --fc-today-bg-color: rgba(0, 123, 255, 0.15); /* Light blue tint */
+
+}
+
+/* General event styling */
+.fc-event {
+    background-color: #F7BFA1 !important; /* Your preferred background */
+    color: #ffffff !important;           /* Your preferred text color */
+    border: none !important;             /* Optional: remove border */
+}
+
+/* Event title specifically */
+.fc-event .fc-event-title {
+    color: #ffffff !important;
+}
+
+/* Change color of the time labels on the time grid (left side) */
+.fc .fc-timegrid-slot-label {
+    color: #F7BFA1 !important;  /* Text color */
+    font-weight: bold;
+}
+
+/* Optionally adjust background of time labels */
+.fc .fc-timegrid-slot-label-frame {
+    background-color: #f0f8ff !important;  /* Light background */
+}
+
+
+
+/*hero section*/
+
+.view-memories-btn {
+  background-color: white;
+  color: #9c786d;
+  font-weight: 600;
+  padding: 12px 24px;
+  margin-top: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.view-memories-btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.view-reports-btn {
+  background-color: white;
+  color: #9c786d;
+  font-weight: 600;
+  padding: 12px 24px;
+  margin-top: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.view-reports-btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+.hero-section {
+  /* background-image: url('/images/hero.jpg'); 
+  background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  color: white;
+  background-color: #CFB4AC;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertically center */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+}
+.hero-content{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align to top */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+  margin-top: 8rem;
+  max-height: 100%;
+  gap: 1.5rem;
+}
+
+.hero-content2{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align to top */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+  margin-top: 8rem;
+  max-height: 100%;
+  gap: 1.5rem;
+}
+
+.slide-button-container {
+
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.hero-overlay {
+  padding: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+ 
+}
+
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0rem;
+}
+
+.slider {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  animation: fade 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: flex; /* only active one shows */
+  align-items: center;
+  justify-content: center;
+  animation: fade 0.5s ease-in-out;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: #dfd3cf;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slider-arrow.prev {
+  left: -10px;
+}
+
+.slider-arrow.next {
+  right: -10px;
+}
+
+
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #89400f;
+}
+
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+.nss-logo {
+  width: 5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-family: 'Fraunces', serif;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+.hero-title-2 {
+  font-size: 2rem;
+  font-family: 'Fraunces', serif;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+
+
+
+
+
+.hero-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.hero-box h3 {
+  margin: 0 0 0.5rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.hero-box p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: white;
+}
+
+
+
+
+
+.canon-card {
+  position: relative;
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  /* margin-top: 40px; */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Fix leftmost card so it doesn't overlap out of bounds */
+.row > .col:first-child .canon-card {
+  margin-left: 0;
+}
+
+/* Card border "bulge" illusion with rounded edge */
+.canon-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background-color: #f9f9f9; /* Match page background */
+  z-index: -1;
+}
+
+/* Title Box Styling */
+.event-title-box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 12px;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  border-left: 3px solid white;
+  border-top: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-right: none;
+  backdrop-filter: blur(2px);
+}
+
+h5 {
+  margin-bottom: 0 !important; /* or any value you want */
+}
+
+
+
+
+
+/* Mobile responsiveness */
+/* 📱 Responsive layout for smaller devices */
+@media (max-width: 768px) {
+  /* Section title - center on mobile */
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    margin: 2rem auto 1rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  /* Calendar wrapper adjustments */
+  #calendar-wrapper {
+    width: 95%;
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  #eventCalendar {
+    min-width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Stat section stacking vertically */
+  .stats-grid {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .stat-card {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .stat-card > div {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .stat-title {
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .stat-number,
+  .stat-number-large {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .stat-change,
+  .change-percent,
+  .change-text {
+    font-size: 0.9rem;
+  }
+
+  /* Calendar tweaks for readability */
+  .fc-toolbar-title {
+    font-size: 1.2rem;
+  }
+
+  .fc-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+.fc-col-header
+{
+   width: 100% !important;
+}
+  .fc-daygrid-day-number {
+    font-size: 0.75rem;
+    padding: 0.2rem;
+  }
+
+  .fc-event {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
+
+
+    /* Stack toolbar elements vertically */
+  .fc-header-toolbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  .fc-toolbar-chunk {
+    width: 100%;
+  }
+
+  .fc-toolbar-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .fc-button-group {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size:0.5rem !important;
+}
+
+}
+
+
+
+.fc .fc-scrollgrid-sync-table {
+  width: 100% !important;
+}
+
+.fc .fc-daygrid-body {
+  width: 100% !important;
+}
+
+
+
+
+.nss-progress-report .card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.card-title {
+    color: #9c786d !important;
+    font-weight:bold;
+}
+
+.calendar-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #62372a;
+}
+.calendar-title {
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+
+
+/* hero section background image */
+
+.slide {
+  position: relative;
+  min-height: 100%; /* adjust height */
+  background-size: cover;
+  background-position: center;
+  min-width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white; /* text readable */
+  text-align: center;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  border-radius: 10px;
+}
+
+.slide .hero-content {
+  position: relative;
+  z-index: 1; /* keeps text above overlay */
+}

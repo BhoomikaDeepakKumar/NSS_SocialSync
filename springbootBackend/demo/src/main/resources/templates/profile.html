@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSS SocialSync - Profile</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/profile.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Gowun+Dodum:wght@400&family=Hannari:wght@400&family=Poppins:wght@400;500;700&family=Nunito:wght@400;700&family=Open+Sans:wght@400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main class="admin-panel-page">
+    <div class="admin-panel">
+      <div id="header-container"></div>
+
+      <div class="main-container">
+        <div id="sidebar-container"></div>
+
+        <section class="content">
+          <div class="breadcrumb-section">
+            <h2 class="page-title">PROFILE</h2>
+            <div class="breadcrumb">
+              Home / <span class="current-page">Profile</span>
+            </div>
+          </div>
+
+          <div class="profile-card-wrapper">
+            <div class="profile-card">
+  <!-- Edit button -->
+  <button class="edit-btn">
+    <img src="/images/edit.png" alt="Edit" />
+  </button>
+
+  <div class="profile-header">
+    <h3 id="profileUsername">Username</h3>
+    <p class="profile-email"><strong>Email:</strong> <span id="profileEmail">user@example.com</span></p>
+  </div>
+
+  <div class="profile-details">
+    <p><strong>Full Name:</strong> <span id="profileName">John Doe</span></p>
+    <p><strong>Volunteer ID:</strong> <span id="volunteerId">2025_001</span></p>
+    <p><strong>Course:</strong> <span id="profileCourse">BCA</span></p>
+    <p><strong>Semester:</strong> <span id="semester">1</span></p>
+    <p><strong>Contact:</strong> <span id="profileContact">+91-9876543210</span></p>
+    <p><strong>Role:</strong> <span id="profileRole">Volunteer</span></p>
+  </div>
+</div>
+
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="/js/profile.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

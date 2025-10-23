@@ -1,0 +1,221 @@
+/* Form container */
+
+.event-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Form elements */
+.event-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.event-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.event-form input,
+.event-form textarea,
+.event-form input.picker__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.event-form input:focus,
+.event-form textarea:focus,
+.event-form input.picker__input:focus {
+  outline: none;
+  border-color: #404E5C;
+  background-color: #fff;
+  color: #000;
+}
+
+.event-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.event-form .btn-primary {
+  background-color: #405E77;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 1rem auto 0 auto; /* This centers it */
+}
+
+.event-form .btn-primary:hover {
+    background-color: #1a364e;
+
+}
+
+/* Date Picker Styles */
+.picker {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem !important;
+  z-index: 9999;
+}
+
+.picker__frame {
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+}
+
+/* Header Styling */
+.picker__header {
+  background-color: #B7C3F3 !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 1rem 1rem 0 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  position: relative !important;
+}
+
+/* Navigation buttons */
+.picker__nav--prev,
+.picker__nav--next {
+  color: white !important;
+  font-size: 1.2rem !important;
+  opacity: 0.8 !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: none !important;
+  border: none !important;
+}
+
+.picker__nav--prev {
+  left: 1rem !important;
+}
+
+.picker__nav--next {
+  right: 1rem !important;
+}
+
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  opacity: 1 !important;
+}
+
+/* Month/Year dropdowns */
+.picker__select--month,
+.picker__select--year {
+  height: 2.5rem !important;
+  border-radius: 0.5rem !important;
+  border: 1px solid #ccc !important;
+  font-size: 0.9rem !important;
+  font-family: 'Inter', sans-serif !important;
+  background-color: #fff !important;
+  color: #333 !important;
+  box-sizing: border-box !important;
+  padding: 0 0.5rem !important;
+  margin: 0 0.25rem !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.picker__select--month:focus,
+.picker__select--year:focus {
+  outline: none !important;
+  border-color: #404E5C !important;
+}
+
+/* Day cells */
+.picker__day {
+  color: #333 !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+}
+
+.picker__day--selected,
+.picker__day--highlighted {
+  background-color: #B7C3F3 !important;
+  color: white !important;
+}
+
+.picker__day--today {
+  border-bottom: 2px solid #B7C3F3 !important;
+}
+
+.picker__day--disabled {
+  color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* Footer section */
+.picker__footer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+  padding: 0.75rem 1rem !important;
+  background-color: #ffffff !important;
+  border-radius: 0 0 1rem 1rem !important;
+}
+
+/* Footer buttons */
+.picker__button--clear,
+.picker__button--today,
+.picker__button--close {
+  background-color: #B7C3F3 !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Remove icons from footer buttons */
+.picker__button--clear::before,
+.picker__button--today::before,
+.picker__button--close::before {
+  display: none !important;
+}
+
+.picker__button--clear:hover,
+.picker__button--today:hover,
+.picker__button--close:hover {
+  background-color: #B7C3F3 !important;
+}
+
+.picker__list-item--selected,
+.picker__list-item--selected:hover,
+.picker--focused .picker__list-item--selected {
+  background: #B7C3F3 !important;
+
+}
+
+.event-form .btn-primary:hover,
+.btn-primary:hover {
+  background-color: #0d3e43 !important;
+  color: white !important;
+  transform: translateY(-1px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
