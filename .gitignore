@@ -1,0 +1,6 @@
+﻿# Ignore build outputs
+springbootBackend/demo/target/
+*.jar
+*.class
+*.log
+*.docx
