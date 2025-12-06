@@ -26,7 +26,12 @@ class ProfileResponse {
         this.course = user.getCourse();
         this.semester = user.getSemester();
         this.contact = user.getContact();
-        this.role = user.getRole();
+this.role = user.getRoles()
+                 .stream()
+                 .findFirst()
+                 .map(r -> r.getName().name())
+                 .orElse("ROLE_USER");
+
     }
 
     // getters
@@ -36,7 +41,7 @@ class ProfileResponse {
     public String getCourse() { return course; }
     public Integer getSemester() { return semester; }
     public String getContact() { return contact; }
-    public String getRole() { return role; }
+    public String getRoles() { return role; }
 }
 
 @RestController
@@ -90,7 +95,6 @@ public class ProfileController {
         user.setCourse(updatedProfile.getCourse());
         user.setSemester(updatedProfile.getSemester());
         user.setContact(updatedProfile.getContact());
-        user.setRole(updatedProfile.getRole()); // allow admin to promote/demote
 
         MyAppUser saved = myAppUserRepository.save(user);
         return new ProfileResponse(saved);

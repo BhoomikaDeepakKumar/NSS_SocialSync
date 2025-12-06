@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import java.util.HashSet;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,54 +12,65 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Model.MyAppUser;
+import com.example.demo.Model.Role;
 import com.example.demo.Repository.MyAppUserRepository;
+import com.example.demo.Repository.RoleRepository;
 import com.example.demo.utils.JwtTokenUtil;
+import com.example.demo.Model.RoleType;
+
 
 @RestController
 public class RegistrationController {
-    
+
     @Autowired
     private MyAppUserRepository myAppUserRepository;
-    
+
+    @Autowired
+    private RoleRepository roleRepository;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
-    
-    
-@PostMapping(value = "/req/signup", consumes = "application/json")
-public ResponseEntity<String> createUser(@RequestBody MyAppUser user) {
 
-    // find user by email
-    Optional<MyAppUser> existingAppUserOpt = myAppUserRepository.findByEmail(user.getEmail());
+    @PostMapping(value = "/req/signup", consumes = "application/json")
+    public ResponseEntity<String> createUser(@RequestBody MyAppUser user) {
 
-    if (existingAppUserOpt.isPresent()) {
-        MyAppUser existingAppUser = existingAppUserOpt.get();
+        Optional<MyAppUser> existingAppUserOpt = myAppUserRepository.findByEmail(user.getEmail());
 
-        if (existingAppUser.isVerified()) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body("User already exists and is verified.");
-        } else {
-            String verificationToken = JwtTokenUtil.generateToken(existingAppUser.getEmail());
-            existingAppUser.setVerificationToken(verificationToken);
-            myAppUserRepository.save(existingAppUser);
+        if (existingAppUserOpt.isPresent()) {
+            MyAppUser existingAppUser = existingAppUserOpt.get();
 
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body("Verification email resent. Please check your inbox.");
+            if (existingAppUser.isVerified()) {
+                return ResponseEntity
+                        .status(HttpStatus.BAD_REQUEST)
+                        .body("User already exists and is verified.");
+            } else {
+                String verificationToken = JwtTokenUtil.generateToken(existingAppUser.getEmail());
+                existingAppUser.setVerificationToken(verificationToken);
+                myAppUserRepository.save(existingAppUser);
+
+                return ResponseEntity
+                        .status(HttpStatus.OK)
+                        .body("Verification email resent. Please check your inbox.");
+            }
         }
+
+        // New user registration
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        String verificationToken = JwtTokenUtil.generateToken(user.getEmail());
+        user.setVerificationToken(verificationToken);
+        user.setVerified(false);
+
+        // --- SET DEFAULT ROLE USER ---
+        Role userRole = roleRepository.findByName(RoleType.ROLE_USER)   
+                .orElseThrow(() -> new RuntimeException("ROLE_USER is missing from DB"));
+
+        user.setRoles(new HashSet<>());
+        user.getRoles().add(userRole);
+
+        myAppUserRepository.save(user);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Registration successful! Please verify your email.");
     }
-
-    // If user does not exist -> create new one
-    user.setPassword(passwordEncoder.encode(user.getPassword()));
-    String verificationToken = JwtTokenUtil.generateToken(user.getEmail());
-    user.setVerificationToken(verificationToken);
-    user.setVerified(false);
-    user.setRole("Volunteer"); // default role
-
-    myAppUserRepository.save(user);
-
-    return ResponseEntity
-            .status(HttpStatus.OK)
-            .body("Registration successful! Please verify your email.");
-}
 }

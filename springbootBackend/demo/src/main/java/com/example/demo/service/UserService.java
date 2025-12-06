@@ -40,11 +40,11 @@ public class UserService {
         // Map to DTOs
         return users.stream()
                 .map(user -> new UserDTO(
-                        user.getId(),
-                        user.getUsername(),
-                        user.getEmail(),
-                        user.getRoles().stream().map(r -> r.getName().name()).toList()
-                ))
+    user.getId(),
+    user.getFullName(),        // NOW USING fullName instead of username
+    user.getEmail(),
+    user.getRoles().stream().map(r -> r.getName().name()).toList()
+))
                 .collect(Collectors.toList());
     }
 

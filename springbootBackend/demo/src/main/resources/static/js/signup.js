@@ -44,16 +44,13 @@ const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const username = document.getElementById('username').value;
+  const fullName = document.getElementById('fullName').value;
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('passwordcon').value;
   const email = document.getElementById('email').value;
 
-  const data = {
-    username,
-    email,
-    password
-  };
+const data = { fullName, email, password };
+
 
   if (password === confirmPassword) {
     fetch('/req/signup', {

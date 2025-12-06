@@ -20,8 +20,8 @@ public class UserController {
 
     @GetMapping("/profile")
 public ResponseEntity<?> getLoggedInUser(Authentication authentication) {
-    String username = authentication.getName();
-    Optional<MyAppUser> optionalUser = myAppUserRepository.findByUsername(username);
+    String email = authentication.getName();
+    Optional<MyAppUser> optionalUser = myAppUserRepository.findByEmail(email);
 
     if (optionalUser.isPresent()) {
         return ResponseEntity.ok(optionalUser.get());
