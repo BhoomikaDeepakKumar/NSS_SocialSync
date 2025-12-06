@@ -30,7 +30,7 @@ public class MyAppUserService implements UserDetailsService {
                 .authorities(
                         user.getRoles()
                                 .stream()
-                                .map(Role::getName)
+                                .map(role -> role.getName().name())
                                 .toArray(String[]::new)
                 )
                 .build();

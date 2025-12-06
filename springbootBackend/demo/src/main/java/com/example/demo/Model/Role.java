@@ -1,35 +1,36 @@
 package com.example.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "roles")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})  // <-- SUPER IMPORTANT
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)  // store enum value as string in DB
+    @Enumerated(EnumType.STRING) 
     @Column(unique = true, nullable = false)
-    private RoleType name;  // <-- enum instead of String
+    private RoleType name;
 
-    // constructor, getters, setters
     public Role() {}
 
     public Role(RoleType name) {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public Long getId() { 
+        return id; 
     }
 
-    public RoleType getName() {
-        return name;
+    public RoleType getName() { 
+        return name; 
     }
 
-    public void setName(RoleType name) {
-        this.name = name;
+    public void setName(RoleType name) { 
+        this.name = name; 
     }
 }

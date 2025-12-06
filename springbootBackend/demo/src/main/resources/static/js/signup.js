@@ -66,10 +66,10 @@ const data = { fullName, email, password };
         console.log("Response message:", message);
 
         if (response.ok) {
-          alert("Signup successful! Please complete your profile.");
+          alert("Signup successful! Please login now.");
 
           // ✅ Redirect to complete-profile.html with email param
-          window.location.href = `/complete-profile?email=${encodeURIComponent(email)}`;
+          window.location.href = "/login";
         } else {
           alert("Signup failed: " + (message || "Unknown error occurred."));
         }
