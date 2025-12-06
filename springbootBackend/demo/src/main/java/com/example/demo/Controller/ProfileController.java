@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Year;
 import java.util.Optional;
 
-// DTO to safely send response
+// ------------------------------------------------------------------
+// DTO for sending profile safely (no password, tokens, roles table)
+// ------------------------------------------------------------------
 class ProfileResponse {
     private String email;
     private String fullName;
@@ -16,9 +18,9 @@ class ProfileResponse {
     private String course;
     private Integer semester;
     private String contact;
+    private String affiliation;     // NEW
     private String role;
 
-    // constructor
     public ProfileResponse(MyAppUser user) {
         this.email = user.getEmail();
         this.fullName = user.getFullName();
@@ -26,22 +28,24 @@ class ProfileResponse {
         this.course = user.getCourse();
         this.semester = user.getSemester();
         this.contact = user.getContact();
-this.role = user.getRoles()
-                 .stream()
-                 .findFirst()
-                 .map(r -> r.getName().name())
-                 .orElse("ROLE_USER");
+        this.affiliation = user.getAffiliation(); // NEW
 
+        // extract first role name safely
+        this.role = user.getRoles()
+                .stream()
+                .findFirst()
+                .map(r -> r.getName().name())
+                .orElse("ROLE_USER");
     }
 
-    // getters
     public String getEmail() { return email; }
     public String getFullName() { return fullName; }
     public String getVolunteerId() { return volunteerId; }
     public String getCourse() { return course; }
     public Integer getSemester() { return semester; }
     public String getContact() { return contact; }
-    public String getRoles() { return role; }
+    public String getAffiliation() { return affiliation; }
+    public String getRole() { return role; }
 }
 
 @RestController
@@ -51,9 +55,14 @@ public class ProfileController {
     @Autowired
     private MyAppUserRepository myAppUserRepository;
 
-    // --- Complete Profile after signup ---
+    // ------------------------------------------------------------------
+    // 1️⃣ COMPLETE PROFILE (first-time setup)
+    // ------------------------------------------------------------------
     @PostMapping("/complete-profile/{email}")
-    public ProfileResponse completeProfile(@PathVariable String email, @RequestBody MyAppUser updatedProfile) {
+    public ProfileResponse completeProfile(
+            @PathVariable String email,
+            @RequestBody MyAppUser updatedProfile
+    ) {
         Optional<MyAppUser> userOpt = myAppUserRepository.findByEmail(email);
 
         if (userOpt.isEmpty()) {
@@ -62,27 +71,33 @@ public class ProfileController {
 
         MyAppUser user = userOpt.get();
 
-        // set profile fields
+        // fill in profile details
         user.setFullName(updatedProfile.getFullName());
         user.setCourse(updatedProfile.getCourse());
         user.setSemester(updatedProfile.getSemester());
         user.setContact(updatedProfile.getContact());
+        user.setAffiliation(updatedProfile.getAffiliation()); // NEW
 
-        // generate volunteerId if not already set
+        // generate volunteer ID if null
         if (user.getVolunteerId() == null) {
-            String prefix = String.valueOf(Year.now().getValue()); // current year
-            long count = myAppUserRepository.count() + 1; // total users + 1
-            String volunteerId = String.format("%s_%03d", prefix, count); // e.g., 2025_001
+            String prefix = String.valueOf(Year.now().getValue());
+            long count = myAppUserRepository.count() + 1;
+            String volunteerId = String.format("%s_%03d", prefix, count);
             user.setVolunteerId(volunteerId);
         }
 
         MyAppUser saved = myAppUserRepository.save(user);
-        return new ProfileResponse(saved); // return safe response
+        return new ProfileResponse(saved);
     }
 
-    // --- Update profile later ---
+    // ------------------------------------------------------------------
+    // 2️⃣ UPDATE PROFILE (normal edit from profile page)
+    // ------------------------------------------------------------------
     @PutMapping("/update-profile/{email}")
-    public ProfileResponse updateProfile(@PathVariable String email, @RequestBody MyAppUser updatedProfile) {
+    public ProfileResponse updateProfile(
+            @PathVariable String email,
+            @RequestBody MyAppUser updatedProfile
+    ) {
         Optional<MyAppUser> userOpt = myAppUserRepository.findByEmail(email);
 
         if (userOpt.isEmpty()) {
@@ -91,10 +106,14 @@ public class ProfileController {
 
         MyAppUser user = userOpt.get();
 
+        // update editable fields only
         user.setFullName(updatedProfile.getFullName());
         user.setCourse(updatedProfile.getCourse());
         user.setSemester(updatedProfile.getSemester());
         user.setContact(updatedProfile.getContact());
+        user.setAffiliation(updatedProfile.getAffiliation()); // NEW
+
+        // do NOT update password, roles, tokens
 
         MyAppUser saved = myAppUserRepository.save(user);
         return new ProfileResponse(saved);

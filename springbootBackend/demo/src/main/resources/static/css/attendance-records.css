@@ -52,31 +52,31 @@
 /*Export csv Button*/
 .btn-export {
     --bs-btn-color: #fff !important;
-    --bs-btn-bg: #2F195F !important;
-    --bs-btn-border-color: #2F195F  !important;
+    --bs-btn-bg: #4bc4be !important;
+    --bs-btn-border-color: #4bc4be  !important;
     --bs-btn-hover-color: #fff !important;
-    --bs-btn-hover-bg: #5a2fc6 !important;
-    --bs-btn-hover-border-color: #5a2fc6 !important;
+    --bs-btn-hover-bg: #a2dfdc !important;
+    --bs-btn-hover-border-color: #a2dfdc !important;
     --bs-btn-focus-shadow-rgb: 75, 201, 181 !important;
     --bs-btn-active-color: #fff !important;
-    --bs-btn-active-bg: #5a2fc6 !important;
-    --bs-btn-active-border-color: #5a2fc6 !important;
+    --bs-btn-active-bg: #a2dfdc !important;
+    --bs-btn-active-border-color: #a2dfdc !important;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
     --bs-btn-disabled-color: #fff !important;
 
 }
 /* Export Button */
 .btn-pdf {
-  background-color: #7353BA !important; /* soft coral red */
+  background-color: #959595 !important; /* soft coral red */
   color: white !important;
-  border-color: #7353BA !important;
+  border-color: #959595 !important;
 }
 
 .btn-pdf:hover,
 .btn-pdf:focus,
 .btn-pdf:active {
-  background-color: #9592d1 !important;
-  border-color: #9592d1 !important;
+  background-color: #c5c4c4 !important;
+  border-color: #c5c4c4 !important;
   color: white !important;
 }
 

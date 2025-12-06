@@ -30,23 +30,62 @@
           <div class="profile-card-wrapper">
             <div class="profile-card">
   <!-- Edit button -->
-  <button class="edit-btn">
-    <img src="/images/edit.png" alt="Edit" />
-  </button>
+  <button class="edit-btn">Edit</button>
 
   <div class="profile-header">
     <h3 id="profileUsername">Username</h3>
-    <p class="profile-email"><strong>Email:</strong> <span id="profileEmail">user@example.com</span></p>
-  </div>
+  
 
   <div class="profile-details">
-    <p><strong>Full Name:</strong> <span id="profileName">John Doe</span></p>
-    <p><strong>Volunteer ID:</strong> <span id="volunteerId">2025_001</span></p>
-    <p><strong>Course:</strong> <span id="profileCourse">BCA</span></p>
-    <p><strong>Semester:</strong> <span id="semester">1</span></p>
-    <p><strong>Contact:</strong> <span id="profileContact">+91-9876543210</span></p>
-    <p><strong>Role:</strong> <span id="profileRole">Volunteer</span></p>
-  </div>
+
+  <!-- Email (NON-editable but looks same) -->
+  <p><strong>EMAIL</strong>
+    <span id="profileEmail" class="fixed-field"></span>
+  </p>
+
+  <!-- Volunteer ID (NON-editable but looks same) -->
+  <p><strong>VOLUNTEER ID</strong>
+    <span id="volunteerId" class="fixed-field"></span>
+  </p>
+
+  <!-- Full Name -->
+  <p><strong>FULL NAME</strong>
+    <span id="profileName"></span>
+    <input type="text" id="profileNameInput" class="edit-input" style="display:none;">
+  </p>
+
+  <!-- Course -->
+  <p><strong>COURSE</strong>
+    <span id="profileCourse"></span>
+    <input type="text" id="profileCourseInput" class="edit-input" style="display:none;">
+  </p>
+
+  <!-- Semester -->
+  <p><strong>SEMESTER</strong>
+    <span id="semester"></span>
+    <input type="number" id="semesterInput" class="edit-input" style="display:none;">
+  </p>
+
+  <!-- Contact -->
+  <p><strong>CONTACT</strong>
+    <span id="profileContact"></span>
+    <input type="text" id="profileContactInput" class="edit-input" style="display:none;">
+  </p>
+
+  <!-- Role -->
+  <p><strong>AFFILIATION</strong>
+    <span id="profileRole"></span>
+    <select id="profileRoleInput" class="edit-input" style="display:none;">
+      <option value="VOLUNTEER">Volunteer</option>
+      <option value="MENTOR">Mentor</option>
+      <option value="CORE">Core</option>
+      <option value="FACULTY">Faculty</option>
+    </select>
+  </p>
+
+</div>
+
+
 </div>
 
           </div>

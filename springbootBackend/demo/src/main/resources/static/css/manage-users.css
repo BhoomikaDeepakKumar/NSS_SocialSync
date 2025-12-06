@@ -74,3 +74,103 @@
 .update-btn:hover {
   background: #1e8449;
 }
+
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.left-actions button {
+  margin-right: 10px;
+}
+
+.right-actions select {
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Action Row Layout --- */
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0;
+  padding: 10px 0;
+}
+
+/* Align items horizontally */
+.left-actions button,
+.right-actions select,
+.right-actions button {
+  margin-right: 10px;
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+/* Primary = bright theme colour */
+.btn-primary {
+  background: #a2dfdc;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #4bc4be ;
+}
+
+/* Secondary = softer grey */
+.btn-secondary {
+  background: #d0cfcf;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #959595;
+}
+
+/* --- Bulk Action Dropdown --- */
+#bulkActionSelect {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* --- Table Checkbox Column --- */
+.users-table thead th:first-child,
+.users-table tbody td:first-child {
+  text-align: center;
+  width: 40px;
+}
+
+/* Checkbox size */
+#selectAllUsers,
+.user-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}

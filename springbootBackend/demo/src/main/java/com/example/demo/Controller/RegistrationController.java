@@ -67,6 +67,14 @@ public class RegistrationController {
         user.setRoles(new HashSet<>());
         user.getRoles().add(userRole);
 
+        // Generate volunteerId if not already present
+if (user.getVolunteerId() == null || user.getVolunteerId().isEmpty()) {
+    long count = myAppUserRepository.count() + 1;
+    String prefix = String.valueOf(java.time.Year.now().getValue());
+    String volunteerId = String.format("%s_%03d", prefix, count);
+    user.setVolunteerId(volunteerId);
+}
+
         myAppUserRepository.save(user);
 
         return ResponseEntity

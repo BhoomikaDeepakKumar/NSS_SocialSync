@@ -1,61 +1,177 @@
+/* ------------ Page Container ------------ */
 .profile-card-wrapper {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
+/* ------------ Profile Card ------------ */
 .profile-card {
-  background: #6E7E85;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
   width: 100%;
-  text-align: left;   /* Changed from center → left */
-  font-size: 1.25rem;
+  max-width: 650px;
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  font-family: "Inter", sans-serif;
 }
 
-.profile-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;  /* Changed from center → left align */
-
-}
-
-
-
-.profile-header h3 {
-  margin-bottom: 0.25rem;
-  font-size: 2.5rem;
-  color: #333;
-}
-
-.profile-email {
-  color: #ffffff;
-  font-size: 1.25rem;
-}
-
-.profile-card {
-  position: relative; /* so button can be placed absolutely */
-}
-
+/* ------------ Edit Button ------------ */
 .edit-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: #4bc4be;
   border: none;
+  padding: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  padding: 4px;
+  transition: 0.2s ease;
 }
 
 .edit-btn img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+  transition: 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #a2dfdc;
 }
 
 .edit-btn:hover img {
   opacity: 1;
+}
+
+/* When editing → Save mode */
+.profile-card.save-active .edit-btn {
+  background: #4e6cff;
+}
+
+.profile-card.save-active .edit-btn img {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* ------------ Header (Username + Email) ------------ */
+.profile-header h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a2f35;
+}
+
+.profile-email {
+  margin-top: 4px;
+  color: #545e69;
+  font-size: 1.05rem;
+}
+
+/* ------------ Field Blocks ------------ */
+.profile-details p {
+  margin: 1.5rem 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e8ec;
+}
+
+/* Labels like “Full Name:” “Contact:” */
+.profile-details strong {
+  display: block;
+  color: #8b97a3;
+  font-size: 0.9rem;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Values */
+.profile-details span {
+  display: block;
+  font-size: 1.25rem;
+  color: #2c3a47;
+  font-weight: 500;
+}
+
+/* ------------ Inputs for Edit Mode ------------ */
+.edit-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1.4px solid #d0d7de;
+  margin-top: 6px;
+  display: none; /* hidden until edit mode */
+  outline: none;
+  font-family: "Inter", sans-serif;
+  transition: 0.2s ease;
+}
+
+.edit-input:focus {
+  border-color: #4e6cff;
+}
+
+/* Dropdown */
+.edit-input select {
+  padding: 10px;
+}
+
+/* ------------ Animation ------------ */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------ Edit Button (default grey) ------------ */
+.edit-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: #959595;        /* grey */
+  border: none;
+  padding: 10px 18px;         /* increase size */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #ffffff;             /* button text color */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Hover effect for edit */
+.edit-btn:hover {
+  background: #c5c4c4;
+}
+
+/* ------------ Save Mode (active) ------------ */
+.edit-btn.save-mode {
+  background: #4bc4be;        /* green when in save mode */
+  color: #ffffff;
+}
+
+.edit-btn.save-mode:hover {
+  background: #a2dfdc;        /* darker green on hover */
+}
+
+/* Make sure size stays the same */
+.edit-btn.save-mode,
+.edit-btn {
+  width: auto;     /* or fixed width like 120px */
+  padding: 10px 18px;
+  font-size: 1rem;
 }

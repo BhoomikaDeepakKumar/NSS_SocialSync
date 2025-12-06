@@ -36,6 +36,8 @@ public class MyAppUser {
 
     private String contact;
 
+    // Affiliation: Volunteer / Mentor / Core / Faculty
+private String affiliation;
     
 
     // --- Roles (auth system) ---
@@ -86,6 +88,9 @@ public class MyAppUser {
 
     public String getContact() { return contact; }
     public void setContact(String contact) { this.contact = contact; }
+
+    public String getAffiliation() { return affiliation; }
+public void setAffiliation(String affiliation) { this.affiliation = affiliation; }
 
    
 }
