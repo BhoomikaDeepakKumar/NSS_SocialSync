@@ -123,23 +123,8 @@
 }
 
 /* Publish Button */
-#broadcastForm button {
-  display: inline-block;
-  padding: 12px 22px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #90CBC4, #278277);
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.15s ease;
-}
 
-#broadcastForm button:hover {
-  background: linear-gradient(135deg, #68918c, #1f645c);
-  transform: translateY(-2px);
-}
+
 
 #broadcastForm button:active {
   transform: scale(0.97);
@@ -151,14 +136,36 @@
   margin-top: 10px;
 }
 
+
+ 
 #broadcastForm button {
-  padding: 12px 22px;
+  display: inline-block;
   font-size: 15px;
   font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #90CBC4, #278277);
-  border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.15s ease;
+   background-color: #000000;     /* SHEIN dark fill */
+    color: #fff;
+    padding: 12px 24px;
+    border: 2px solid #ffffff;     /* inner white border */
+    outline: 2px solid #000000;    /* outer black border */
+    outline-offset: -4px;          /* makes both borders stick together */
+
+    transition: all 0.25s ease;
+    /* display: block;
+  margin: 1rem auto 0 auto;  */
 }
+
+
+#broadcastForm button:hover {
+   background-color: #000000;    /* stays dark */
+    outline-offset: 0px;          /* outer black border moves outward */
+    cursor: pointer;
+     color: white;
+    
+    border-color: white !important;
+}
+
+
+
+

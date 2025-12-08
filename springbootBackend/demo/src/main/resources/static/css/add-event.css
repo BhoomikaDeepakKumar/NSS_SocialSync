@@ -49,23 +49,30 @@
   resize: vertical;
 }
 
+
 .event-form .btn-primary {
-  background-color: #405E77;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 1rem auto 0 auto; /* This centers it */
+    background-color: #000000;     /* SHEIN dark fill */
+    color: #fff;
+    padding: 12px 24px;
+    border: 2px solid #ffffff;     /* inner white border */
+    outline: 2px solid #000000;    /* outer black border */
+    outline-offset: -4px;          /* makes both borders stick together */
+
+    transition: all 0.25s ease;
+    display: block;
+  margin: 1rem auto 0 auto; 
 }
 
 .event-form .btn-primary:hover {
-    background-color: #1a364e;
+    background-color: #000000;    /* stays dark */
+    outline-offset: 0px;          /* outer black border moves outward */
+    cursor: pointer;
 
+}
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: black;
+    border-color: white !important;
 }
 
 /* Date Picker Styles */
@@ -212,10 +219,4 @@
 
 }
 
-.event-form .btn-primary:hover,
-.btn-primary:hover {
-  background-color: #0d3e43 !important;
-  color: white !important;
-  transform: translateY(-1px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
+

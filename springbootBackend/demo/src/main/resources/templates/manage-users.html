@@ -35,6 +35,55 @@
     
   </div>
 
+  <!-- 🟦 Add Single User - Slide Panel -->
+<div id="singleUserFormOverlay" class="overlay hidden">
+  <div class="form-panel">
+    <h3>Add Single User</h3>
+
+    <form id="singleUserForm">
+
+      <!-- Full Name -->
+      <label>Full Name *</label>
+      <input type="text" id="fullName" required />
+
+      <!-- Email -->
+      <label>Email *</label>
+      <input type="email" id="email" required />
+
+      <label>Password *</label>
+      <input type="password" id="password" required />
+
+      <!-- Course -->
+      <label>Course (optional)</label>
+      <input type="text" id="course" />
+
+      <!-- Semester -->
+      <label>Semester (optional)</label>
+      <input type="text" id="semester" />
+
+      <!-- Contact -->
+      <label>Contact (optional)</label>
+      <input type="text" id="contact" />
+
+      <!-- Affiliation -->
+      <label>Affiliation</label>
+      <select id="affiliation">
+        <option value="ROLE_USER">Volunteer</option>
+        <option value="ROLE_CORE">Core</option>
+        <option value="ROLE_MENTOR">Mentor</option>
+        <option value="ROLE_FACULTY">Faculty</option>
+      </select>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary">Save User</button>
+        <button type="button" id="cancelSingleUser" class="btn btn-secondary">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
   <!-- Action Row (Above Table, Below Search) -->
 <div class="action-row">
   <div class="left-actions">

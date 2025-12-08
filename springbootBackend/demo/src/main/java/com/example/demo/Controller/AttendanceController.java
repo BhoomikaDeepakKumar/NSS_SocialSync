@@ -1,9 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.Attendance;
-import com.example.demo.Model.Event;
 import com.example.demo.Repository.AttendanceRepository;
-import com.example.demo.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/attendance")
@@ -21,8 +18,6 @@ public class AttendanceController {
     @Autowired
     private AttendanceRepository attendanceRepo;
 
-    @Autowired
-    private EventRepository eventRepo;
 
     // ✅ Add this to call the service
     @Autowired

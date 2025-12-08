@@ -145,7 +145,7 @@
 /* Secondary = softer grey */
 .btn-secondary {
   background: #d0cfcf;
-  color: #333;
+  color: white;
 }
 
 .btn-secondary:hover {
@@ -173,4 +173,65 @@
   width: 18px;
   height: 18px;
   cursor: pointer;
+}
+
+
+/* add single user css */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 2000;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+/* Slide Panel */
+.form-panel {
+  width: 380px;
+  background: #ffffff;
+  padding: 25px;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0%); }
+}
+
+.form-panel h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.form-panel label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.form-panel input,
+.form-panel select {
+  margin-top: 4px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }

@@ -73,15 +73,97 @@ selectAll.addEventListener("change", (e) => {
   document.querySelectorAll(".user-checkbox").forEach(cb => cb.checked = e.target.checked);
 });
 
-document.getElementById("applyBulkActionBtn").addEventListener("click", () => {
+document.getElementById("applyBulkActionBtn").addEventListener("click", async () => {
   const action = document.getElementById("bulkActionSelect").value;
-  const selectedUsers = Array.from(document.querySelectorAll(".user-checkbox:checked")).map(cb => cb.closest("tr").dataset.userId);
-  
+  const selectedUsers = Array.from(document.querySelectorAll(".user-checkbox:checked"))
+                            .map(cb => parseInt(cb.closest("tr").dataset.userId));
+
   if (!action || selectedUsers.length === 0) {
     alert("Select an action and at least one user");
     return;
   }
 
-  // Call backend API with selectedUsers and action
-  console.log(action, selectedUsers);
+  try {
+    const res = await fetch("/api/users/bulk-action?action=" + action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(selectedUsers)
+    });
+
+    if (res.ok) {
+      alert("Bulk action completed successfully!");
+      fetchUsers(); // refresh table
+    } else {
+      const text = await res.text();
+      alert("Error: " + text);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error!");
+  }
+});
+
+
+
+//add single user
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  const addSingleUserBtn = document.querySelector("#addSingleUserBtn");
+  const singleUserFormOverlay = document.querySelector("#singleUserFormOverlay");
+  const cancelSingleUser = document.querySelector("#cancelSingleUser");
+  const singleUserForm = document.querySelector("#singleUserForm");
+
+  // 👉 Show form
+  addSingleUserBtn.addEventListener("click", () => {
+    singleUserFormOverlay.classList.remove("hidden");
+  });
+
+  // 👉 Hide form
+  cancelSingleUser.addEventListener("click", () => {
+    singleUserFormOverlay.classList.add("hidden");
+  });
+
+  // 👉 Submit form
+  singleUserForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const userData = {
+      fullName: document.querySelector("#fullName").value.trim(),
+      email: document.querySelector("#email").value.trim(),
+       password: document.querySelector("#password").value.trim(),
+      course: document.querySelector("#course").value.trim(),
+      semester: document.querySelector("#semester").value.trim(),
+      contact: document.querySelector("#contact").value.trim(),
+      affiliation: document.querySelector("#affiliation").value
+    };
+
+    console.log("Sending new user:", userData);
+
+    // 🔥 send to backend
+    try {
+      const res = await fetch("/api/users/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+      });
+
+      if (res.ok) {
+        alert("User added successfully!");
+        singleUserForm.reset();
+        singleUserFormOverlay.classList.add("hidden");
+
+        // optionally refresh table
+        fetchUsers();
+      } else {
+        alert("Error adding user!");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server error!");
+    }
+  });
+
 });
